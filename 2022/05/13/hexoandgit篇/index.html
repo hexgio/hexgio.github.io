@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>hexo&amp;git | 闹的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="hexo部署在github上的心得体会termux初始化授权访问系统权限1termux-setup-storage 自动换源1apt update  安装相关框架和权限控制 12pkg install root-repopkg install x11-repo  如果在执行安装的过程中有报错，多执行几次apt update、apt upgrade、pkg update、pkg upgrade，过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo&amp;git">
+<meta property="og:url" content="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="hexo部署在github上的心得体会termux初始化授权访问系统权限1termux-setup-storage 自动换源1apt update  安装相关框架和权限控制 12pkg install root-repopkg install x11-repo  如果在执行安装的过程中有报错，多执行几次apt update、apt upgrade、pkg update、pkg upgrade，过程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-12T17:03:45.875Z">
+<meta property="article:modified_time" content="2022-05-12T17:03:45.871Z">
+<meta property="article:author" content="闹">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="闹的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闹的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexgio.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hexoandgit篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/13/hexoandgit%E7%AF%87/" class="article-date">
+  <time class="dt-published" datetime="2022-05-12T17:03:45.875Z" itemprop="datePublished">2022-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      hexo&amp;git
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo部署在github上的心得体会"><a href="#hexo部署在github上的心得体会" class="headerlink" title="hexo部署在github上的心得体会"></a>hexo部署在github上的心得体会</h1><h2 id="termux初始化"><a href="#termux初始化" class="headerlink" title="termux初始化"></a>termux初始化</h2><h3 id="授权访问系统权限"><a href="#授权访问系统权限" class="headerlink" title="授权访问系统权限"></a>授权访问系统权限</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+<h3 id="自动换源"><a href="#自动换源" class="headerlink" title="自动换源"></a>自动换源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
+<p>安装相关框架和权限控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install root-repo</span><br><span class="line">pkg install x11-repo</span><br></pre></td></tr></table></figure>
+
+<p>如果在执行安装的过程中有报错，多执行几次<code>apt update</code>、<code>apt upgrade</code>、<code>pkg update</code>、<code>pkg upgrade</code>，过程中需要输入<code>y</code>进行同意的，执行一路回车就行</p>
+<h3 id="安装vim和openssh"><a href="#安装vim和openssh" class="headerlink" title="安装vim和openssh"></a>安装vim和openssh</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install vim &amp;&amp; pkg install openssh</span><br></pre></td></tr></table></figure>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install git</span><br></pre></td></tr></table></figure>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><h4 id="官方文档参考"><a href="#官方文档参考" class="headerlink" title="官方文档参考"></a><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官方文档参考</a></h4><p>在安装的过程中会在当前目录下生成一些文件，看上去会比较乱，所以先建一个名称为<code>hexo</code>文件夹并进入该文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">cd hexo</span><br></pre></td></tr></table></figure>
+<h5 id="安装hexo框架，可以参考一下国光大大的termux配置教程-Termux-高级终端安装使用配置教程"><a href="#安装hexo框架，可以参考一下国光大大的termux配置教程-Termux-高级终端安装使用配置教程" class="headerlink" title="安装hexo框架，可以参考一下国光大大的termux配置教程:Termux 高级终端安装使用配置教程"></a>安装hexo框架，可以参考一下国光大大的termux配置教程:<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2018/05/termux.html">Termux 高级终端安装使用配置教程</a></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>在安装这个框架时会报错，让执行<code>npm install-g npm@8.8.0</code>,说明当前的npm版本低了，先执行<code>npm -v</code>查看版本，版本号确实低了，那就执行这个命令升级npm版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install-g npm@8.8.0</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
+
+<p>按方向上键调出过去执行过的命令，再次执行安装hexo框架，然后继续在当选目录下执行命令<code>npm install</code>安装相关依赖</p>
+<h5 id="初始化一个博客目录"><a href="#初始化一个博客目录" class="headerlink" title="初始化一个博客目录"></a>初始化一个博客目录</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
+
+<p><code>hexo init</code>是命令，后边的<code>hexo</code>是我为博客目录起的名字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br></pre></td></tr></table></figure>
+<p>执行下面这条命令以启动hexo，然后在浏览器访问<code>http://localhost:4000</code><br>可以看到hexo的欢迎界面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>中间如果有报错就根据相关提示进行执行，或者复制报错内容在网上找答案,解决错误之后再次执行<code>hexo s</code>并在浏览器访问<code>http://localhost:4000</code>后就成功了。</p>
+<h1 id="termux快捷键笔记"><a href="#termux快捷键笔记" class="headerlink" title="termux快捷键笔记"></a>termux快捷键笔记</h1><h5 id="vi编辑内容时，在内容界面按esc，再按dd可删除光标所在行"><a href="#vi编辑内容时，在内容界面按esc，再按dd可删除光标所在行" class="headerlink" title="vi编辑内容时，在内容界面按esc，再按dd可删除光标所在行"></a>vi编辑内容时，在内容界面按<code>esc</code>，再按<code>dd</code>可删除光标所在行</h5><h5 id="ctrl-c结束正在执行的进程"><a href="#ctrl-c结束正在执行的进程" class="headerlink" title="ctrl+c结束正在执行的进程"></a><code>ctrl+c</code>结束正在执行的进程</h5><h5 id="vi编辑内容界面，esc后再-wq可退出并保存并退出"><a href="#vi编辑内容界面，esc后再-wq可退出并保存并退出" class="headerlink" title="vi编辑内容界面，esc后再:wq可退出并保存并退出"></a>vi编辑内容界面，<code>esc</code>后再<code>:wq</code>可退出并保存并退出</h5><h5 id="touch-自定义文件可创建一个自定义文本名的空文件"><a href="#touch-自定义文件可创建一个自定义文本名的空文件" class="headerlink" title="touch 自定义文件可创建一个自定义文本名的空文件"></a><code>touch 自定义文件</code>可创建一个自定义文本名的空文件</h5><h5 id="touch-1-txt后echo-39-hello-39-gt-1-txt，将hello写入1-txt"><a href="#touch-1-txt后echo-39-hello-39-gt-1-txt，将hello写入1-txt" class="headerlink" title="touch 1.txt后echo &#39;hello&#39; &gt; 1.txt，将hello写入1.txt"></a><code>touch 1.txt</code>后<code>echo &#39;hello&#39; &gt; 1.txt</code>，将<code>hello</code>写入<code>1.txt</code></h5><h3 id="git的ssh密钥生成与测试"><a href="#git的ssh密钥生成与测试" class="headerlink" title="git的ssh密钥生成与测试"></a>git的ssh密钥生成与测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure>
+<p>生成私钥与公钥，在<code>.ssh</code>文件内，将公钥<code>id_rsa.pub</code>内容复制粘贴到github主设置的ssh项里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>测试连接</p>
+<h3 id="git初始化"><a href="#git初始化" class="headerlink" title="git初始化"></a>git初始化</h3><p>建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir ck</span><br><span class="line">cd ck</span><br><span class="line">git init</span><br><span class="line">git config --global user.name &quot;name&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br><span class="line">git add &lt;file-name&gt;</span><br></pre></td></tr></table></figure>
+<p>添加本地文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;add my code to new branchB&quot; #添加描述 -mark</span><br></pre></td></tr></table></figure>
+<p>添加文件描述</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 远程仓库地址</span><br></pre></td></tr></table></figure>
+<p>添加远程仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin maste</span><br></pre></td></tr></table></figure>
+<p>初始化推送</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>提交到分支</p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branchname</span><br></pre></td></tr></table></figure>
+<p>创建分支并切换到分支目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add filename</span><br></pre></td></tr></table></figure>
+<p>以分支的身份提交文件到暂存区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin branch</span><br></pre></td></tr></table></figure>
+<p>提交分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -d branchname</span><br></pre></td></tr></table></figure>
+<p>删除分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d branchname</span><br></pre></td></tr></table></figure>
+<p>删除分支</p>
+<h3 id="git-push报错解决"><a href="#git-push报错解决" class="headerlink" title="git push报错解决"></a>git push报错解决</h3><p>进行push前先将远程仓库pull到本地仓库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git push -u origin master</span><br><span class="line">git push -u origin master -f #强制push本地仓库到远程(这种情况不会进行merge，强制push后过程文件可能会丢失，不建议使用此方法)</span><br></pre></td></tr></table></figure>
+
+<h3 id="git删除分支"><a href="#git删除分支" class="headerlink" title="git删除分支"></a>git删除分支</h3><h5 id="git查看分支"><a href="#git查看分支" class="headerlink" title="git查看分支"></a>git查看分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>查看本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
+<p>查看远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+<p>查看本地和远程分支</p>
+<h5 id="git删除分支-1"><a href="#git删除分支-1" class="headerlink" title="git删除分支"></a>git删除分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 本地分支名</span><br></pre></td></tr></table></figure>
+<p>删除本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete 远程分支名</span><br></pre></td></tr></table></figure>
+<p>删除远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin 远程分支</span><br></pre></td></tr></table></figure>
+<p>推送空分支到远程(删除远程分支的另一种实现)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/" data-id="cl339tbox0002sks694kmfj53" data-title="hexo&amp;git" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/13/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/13/hexoandgit%E7%AF%87/">hexo&amp;git</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/13/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/13/gitstudy/">git教程</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">hosts原文件内容</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/13/termux/">termux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 闹<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
