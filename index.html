@@ -73,10 +73,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ssh篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/13/ssh%E7%AF%87/" class="article-date">
+  <time class="dt-published" datetime="2022-05-13T03:40:19.452Z" itemprop="datePublished">2022-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/13/ssh%E7%AF%87/">termux-openssh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>安装好termux之后，想尝试一下termux的ssh，以我为例，做一个总结。<br>注意：以下操作需要保证电脑跟手机保持在同一个局域网，且是电脑连接手机。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh #安装openssh</span><br><span class="line">passwd #电脑在连接termux时会提示输入密码，所以需要在termux中提前设置，执行passwd后会提示设置密码并确认密码。</span><br><span class="line">whoami #查看termux的用户名。</span><br><span class="line">ifconfig #查看termux的ip，我的是wlan1部分，看inet的后的ip地址。</span><br><span class="line">ssh -p user@ip #user为termux执行whoami后看到的用户名，ip为执行ifconfig后看到的wlan1部分inet对应的ip。</span><br><span class="line">接下来会询问&quot;yes or no&quot;,输入yes，输入密码，然后连接成功。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/13/ssh%E7%AF%87/" data-id="cl33w6g0s0005h4s6505bbefy" data-title="termux-openssh" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hexoandgit篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/13/hexoandgit%E7%AF%87/" class="article-date">
-  <time class="dt-published" datetime="2022-05-12T22:51:52.105Z" itemprop="datePublished">2022-05-13</time>
+  <time class="dt-published" datetime="2022-05-13T01:51:47.512Z" itemprop="datePublished">2022-05-13</time>
 </a>
     
   </div>
@@ -167,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/" data-id="cl33m2vo40002ias6b9de0krm" data-title="hexo&amp;git" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/" data-id="cl33w6g0o0002h4s6axj24vim" data-title="hexo&amp;git" class="article-share-link">分享</a>
       
       
       
@@ -184,7 +226,7 @@
     <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/13/git/" class="article-date">
-  <time class="dt-published" datetime="2022-05-12T17:18:30.713Z" itemprop="datePublished">2022-05-13</time>
+  <time class="dt-published" datetime="2022-05-13T01:49:54.884Z" itemprop="datePublished">2022-05-13</time>
 </a>
     
   </div>
@@ -204,11 +246,11 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="安装好git后创建一个目录用来初始化为git可管理的仓库"><a href="#安装好git后创建一个目录用来初始化为git可管理的仓库" class="headerlink" title="安装好git后创建一个目录用来初始化为git可管理的仓库"></a>安装好git后创建一个目录用来初始化为git可管理的仓库</h2><h4 id="git初始化"><a href="#git初始化" class="headerlink" title="git初始化"></a>git初始化</h4><p>建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir ck  </span><br><span class="line">cd ck  </span><br><span class="line">git init  </span><br><span class="line">git config --global user.name &quot;name&quot; #设置全局用户名</span><br><span class="line">git config --global user.email &quot;email&quot; #设置全局邮箱</span><br><span class="line">vi filename #创建并编辑该文件</span><br><span class="line">git add &lt;file-name&gt; #添加本地文件到暂存区</span><br><span class="line">git commit -m &quot;文件描述&quot; #添加描述 -mark #提交并添加文件描述</span><br><span class="line">git remote add origin 远程仓库地址 #添加远程仓库</span><br><span class="line">git push -u origin master #将本地文件推送到远程仓库的master分支</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mkdir ck  </span><br><span class="line">cd ck  </span><br><span class="line">git init  </span><br><span class="line">git config --global user.name &quot;name&quot; #设置全局用户名</span><br><span class="line">git config --global user.email &quot;email&quot; #设置全局邮箱</span><br><span class="line">vi filename #创建并编辑该文件</span><br><span class="line">git add &lt;file-name&gt; #添加本地文件到暂存区</span><br><span class="line">git commit -m &quot;文件描述&quot; #添加描述 -mark #提交并添加文件描述</span><br><span class="line">git remote add origin 远程仓库地址 #添加远程仓库</span><br><span class="line">git push -u origin master #将本地文件推送到远程仓库的master分支</span><br><span class="line">git remote set-url origin 远程仓库地址 #如果已添加过远程仓库，这条命令可以修改远程仓库。</span><br></pre></td></tr></table></figure>
 <h4 id="创建本地分支"><a href="#创建本地分支" class="headerlink" title="创建本地分支"></a>创建本地分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branchname #创建本地分支并切换到该分支</span><br><span class="line">touch filename #创建一个空文件</span><br><span class="line">git add filename #将该文件添加到暂存区</span><br><span class="line">git commit -m &quot;文件描述&quot;</span><br><span class="line">git push -u origin master #将内容推送到远程分支</span><br><span class="line">git push origin branchname #提交分支</span><br></pre></td></tr></table></figure>
 <h3 id="git-push报错解决"><a href="#git-push报错解决" class="headerlink" title="git push报错解决"></a>git push报错解决</h3><p>进行push前先将远程仓库pull到本地仓库：</p>
-<p>git pull origin master<br>git push -u origin master<br>git push -u origin master -f  </p>
-<p>强制push本地仓库到远程(这种情况不会进行merge，强制push后过程文件可能会丢失，不建议使用此方法)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master  </span><br><span class="line">git push -u origin master  </span><br><span class="line">git push -u origin master -f #强制push本地仓库到远程(这种情况不会进行merge，强制push后过程文件可能会丢失，不建议使用此方法)</span><br></pre></td></tr></table></figure>
+
 <h3 id="git删除分支"><a href="#git删除分支" class="headerlink" title="git删除分支"></a>git删除分支</h3><h5 id="git查看分支"><a href="#git查看分支" class="headerlink" title="git查看分支"></a>git查看分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git branch  #查看本地分支</span><br><span class="line">git branch -r #查看远程分支</span><br><span class="line">git branch -a #查看本地和远程分支</span><br><span class="line">git branch -d 本地分支名 #删除本地分支</span><br><span class="line">git push origin --delete 远程分支名 #删除远程分支</span><br><span class="line">git push origin 远程分支名 #推送空分支到远程(删除远程分支的另一种实现)</span><br></pre></td></tr></table></figure>
 <h3 id="安装好git后创建一个目录用来初始化为git可管理的仓库-1"><a href="#安装好git后创建一个目录用来初始化为git可管理的仓库-1" class="headerlink" title="安装好git后创建一个目录用来初始化为git可管理的仓库"></a>安装好git后创建一个目录用来初始化为git可管理的仓库</h3><h4 id="git初始化-1"><a href="#git初始化-1" class="headerlink" title="git初始化"></a>git初始化</h4><p>建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir ck  </span><br><span class="line">cd ck  </span><br><span class="line">git init  </span><br><span class="line">git config --global user.name &quot;name&quot; #设置全局用户名</span><br><span class="line">git config --global user.email &quot;email&quot; #设置全局邮箱</span><br><span class="line">vi filename #创建并编辑该文件</span><br><span class="line">git add &lt;file-name&gt; #添加本地文件到暂存区</span><br><span class="line">git commit -m &quot;文件描述&quot; #添加描述 -mark #提交并添加文件描述</span><br><span class="line">git remote add origin 远程仓库地址 #添加远程仓库</span><br><span class="line">git push -u origin master #将本地文件推送到远程仓库的master分支</span><br></pre></td></tr></table></figure>
@@ -224,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/git/" data-id="cl33m2vns0000ias6fija21k7" data-title="git" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/git/" data-id="cl33w6g0a0000h4s67d1wdwgh" data-title="git" class="article-share-link">分享</a>
       
       
       
@@ -263,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/gitstudy/" data-id="cl33m2vo00001ias63tnngx86" data-title="git教程" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/gitstudy/" data-id="cl33w6g0l0001h4s610811t5j" data-title="git教程" class="article-share-link">分享</a>
       
       
       
@@ -304,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" data-id="cl33m2vo70004ias68hqg7o81" data-title="hosts原文件内容" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" data-id="cl33w6g0r0004h4s63fng724u" data-title="hosts原文件内容" class="article-share-link">分享</a>
       
       
       
@@ -347,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/termux/" data-id="cl33m2vo80005ias66d9chkq2" data-title="termux" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/termux/" data-id="cl33w6g0t0006h4s62ncsdqya" data-title="termux" class="article-share-link">分享</a>
       
       
       
@@ -389,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/04/vim%E7%AF%87/" data-id="cl33m2voa0006ias6fn1q9u3a" data-title="vim" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/04/vim%E7%AF%87/" data-id="cl33w6g0z000fh4s6ax594dhb" data-title="vim" class="article-share-link">分享</a>
       
       
       
@@ -416,7 +458,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
     </div>
   </div>
 
@@ -426,7 +468,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a>
+      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a>
     </div>
   </div>
 
@@ -448,6 +490,10 @@
       <ul>
         
           <li>
+            <a href="/2022/05/13/ssh%E7%AF%87/">termux-openssh</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/13/hexoandgit%E7%AF%87/">hexo&amp;git</a>
           </li>
         
@@ -461,10 +507,6 @@
         
           <li>
             <a href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">hosts原文件内容</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/13/termux/">termux</a>
           </li>
         
       </ul>

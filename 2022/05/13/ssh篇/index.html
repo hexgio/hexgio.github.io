@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>termux | 闹的博客</title>
+  <title>termux-openssh | 闹的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="termux的下载安装及使用教程termux官网termux教程 初始化操作123termux-setup-storage #给访问权限apt-update &amp;&amp; apt grade &amp;&amp; pkg update &amp;&amp; pkg grade #检查更新并升级pkg install vim #文本编辑工具 其它工具的安装1234pkg install gi">
+  <meta name="description" content="安装好termux之后，想尝试一下termux的ssh，以我为例，做一个总结。注意：以下操作需要保证电脑跟手机保持在同一个局域网，且是电脑连接手机。 123456pkg install openssh #安装opensshpasswd #电脑在连接termux时会提示输入密码，所以需要在termux中提前设置，执行passwd后会提示设置密码并确认密码。whoami #查看termux的用户名。i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="termux">
-<meta property="og:url" content="https://hexgio.github.io/2022/05/13/termux/index.html">
+<meta property="og:title" content="termux-openssh">
+<meta property="og:url" content="https://hexgio.github.io/2022/05/13/ssh%E7%AF%87/index.html">
 <meta property="og:site_name" content="闹的博客">
-<meta property="og:description" content="termux的下载安装及使用教程termux官网termux教程 初始化操作123termux-setup-storage #给访问权限apt-update &amp;&amp; apt grade &amp;&amp; pkg update &amp;&amp; pkg grade #检查更新并升级pkg install vim #文本编辑工具 其它工具的安装1234pkg install gi">
+<meta property="og:description" content="安装好termux之后，想尝试一下termux的ssh，以我为例，做一个总结。注意：以下操作需要保证电脑跟手机保持在同一个局域网，且是电脑连接手机。 123456pkg install openssh #安装opensshpasswd #电脑在连接termux时会提示输入密码，所以需要在termux中提前设置，执行passwd后会提示设置密码并确认密码。whoami #查看termux的用户名。i">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-12T16:08:30.580Z">
-<meta property="article:modified_time" content="2022-05-06T13:18:22.000Z">
+<meta property="article:published_time" content="2022-05-13T03:40:19.452Z">
+<meta property="article:modified_time" content="2022-05-13T03:40:19.452Z">
 <meta property="article:author" content="闹">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="闹的博客" type="application/atom+xml">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-termux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ssh篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/13/termux/" class="article-date">
-  <time class="dt-published" datetime="2022-05-12T16:08:30.580Z" itemprop="datePublished">2022-05-13</time>
+    <a href="/2022/05/13/ssh%E7%AF%87/" class="article-date">
+  <time class="dt-published" datetime="2022-05-13T03:40:19.452Z" itemprop="datePublished">2022-05-13</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      termux
+      termux-openssh
     </h1>
   
 
@@ -96,18 +96,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="termux的下载安装及使用教程"><a href="#termux的下载安装及使用教程" class="headerlink" title="termux的下载安装及使用教程"></a>termux的下载安装及使用教程</h2><p><a target="_blank" rel="noopener" href="https://termux.com/">termux官网</a><br><a target="_blank" rel="noopener" href="https://www.sqlsec.com/2018/05/termux.html">termux教程</a></p>
-<h2 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage #给访问权限</span><br><span class="line">apt-update &amp;&amp; apt grade &amp;&amp; pkg update &amp;&amp; pkg grade #检查更新并升级</span><br><span class="line">pkg install vim #文本编辑工具</span><br></pre></td></tr></table></figure>
-<h2 id="其它工具的安装"><a href="#其它工具的安装" class="headerlink" title="其它工具的安装"></a>其它工具的安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkg install git #根据个人需要选择性安装</span><br><span class="line">pkg install nodejs-lts -g #用来安装各种插件，根据个人需要选择性安装</span><br><span class="line">npm install hexo-cli -g #必须先安装nodejs再执行，用来搭建博客，根据个人需要选择性安装</span><br><span class="line">pkg install proot-distro #可用来安装linux系统，根据个人需要选择性安装</span><br></pre></td></tr></table></figure>
+        <p>安装好termux之后，想尝试一下termux的ssh，以我为例，做一个总结。<br>注意：以下操作需要保证电脑跟手机保持在同一个局域网，且是电脑连接手机。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh #安装openssh</span><br><span class="line">passwd #电脑在连接termux时会提示输入密码，所以需要在termux中提前设置，执行passwd后会提示设置密码并确认密码。</span><br><span class="line">whoami #查看termux的用户名。</span><br><span class="line">ifconfig #查看termux的ip，我的是wlan1部分，看inet的后的ip地址。</span><br><span class="line">ssh -p user@ip #user为termux执行whoami后看到的用户名，ip为执行ifconfig后看到的wlan1部分inet对应的ip。</span><br><span class="line">接下来会询问&quot;yes or no&quot;,输入yes，输入密码，然后连接成功。</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/termux/" data-id="cl33w6g0t0006h4s62ncsdqya" data-title="termux" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/ssh%E7%AF%87/" data-id="cl33w6g0s0005h4s6505bbefy" data-title="termux-openssh" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +114,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          hosts原文件内容
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/05/04/vim%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/05/13/hexoandgit%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">vim</div>
+      <div class="article-nav-title">hexo&amp;git</div>
     </a>
   
 </nav>
