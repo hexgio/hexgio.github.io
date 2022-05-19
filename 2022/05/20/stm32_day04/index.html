@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>stm32入门-4 | 闹的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="此页内容为刘阳老师所著，我以博客的形式记录一下。链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1-4Bs4MfsNj7GRTS-CEX1-A?pwd&#x3D;kg2i 提取码: kg2i一 编译的过程源程序	预处理之后的源程序      汇编程序   	目标程序 hello.c  ----》 hello.i    -----》 hello.s  -----》 hello.o  ---》 可执行程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32入门-4">
+<meta property="og:url" content="https://hexgio.github.io/2022/05/20/stm32_day04/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="此页内容为刘阳老师所著，我以博客的形式记录一下。链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1-4Bs4MfsNj7GRTS-CEX1-A?pwd&#x3D;kg2i 提取码: kg2i一 编译的过程源程序	预处理之后的源程序      汇编程序   	目标程序 hello.c  ----》 hello.i    -----》 hello.s  -----》 hello.o  ---》 可执行程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-19T16:35:55.099Z">
+<meta property="article:modified_time" content="2022-05-19T16:35:55.095Z">
+<meta property="article:author" content="闹">
+<meta property="article:tag" content="stm32">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="闹的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闹的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexgio.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-stm32_day04" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/20/stm32_day04/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T16:35:55.099Z" itemprop="datePublished">2022-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      stm32入门-4
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="链接-https-pan-baidu-com-s-1-4Bs4MfsNj7GRTS-CEX1-A-pwd-kg2i-提取码-kg2i"><a href="#链接-https-pan-baidu-com-s-1-4Bs4MfsNj7GRTS-CEX1-A-pwd-kg2i-提取码-kg2i" class="headerlink" title="链接: https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i 提取码: kg2i"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i">https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i</a> 提取码: kg2i</h6><h2 id="一-编译的过程"><a href="#一-编译的过程" class="headerlink" title="一 编译的过程"></a>一 编译的过程</h2><pre><code>源程序	预处理之后的源程序      汇编程序   	目标程序
+hello.c  ----》 hello.i    -----》 hello.s  -----》 hello.o  ---》 可执行程序
+         预处理	   编译 		汇编	   链接 
+
+预处理： 在C语言中凡是以#开头的内容，都属于预处理
+文件的包含   #include 
+条件编译    #ifndef #define #endif
+宏  
+gcc -E hello.c -o hello.i 	
+
+编译： 将预处理之后的文件编译为汇编文件   
+gcc -S hello.i -o hello.s
+
+汇编: hello.s 汇编成目标文件
+gcc -c hello.s -o hello.o 
+
+链接： 将目标文件和库文件，运行时文件链接生成可执行文件
+gcc hello.o 		
+</code></pre>
+<p>二  定时器<br>    延时<br>    粗略延时   ——while  for<br>    精确延时   ——定时器<br>    在STM32芯片中有很多的定时器资源<br>    可以分为普通定时器和特殊定时器 (wdg RTC)</p>
+<pre><code>看门狗出了定时的功能 和重启复位功能
+达到了定时时间，自动重启
+
+RTC: 提供计时功能  年  月  日...  
+BIOS  uboot 跨平台 优点 移植  bootloader 	
+PMON
+UEFI 1000+  
+操作系统
+
+无论是普通定时器  还是特殊定时器，都有两个因素决定定时时长
+时钟频率  和  计数值 
+
+计数 	 10        	10 		72M		72000		72
+频率	 1HZ      	10HZ	 	72MHz		72MHz		72MHz
+定时时间 	 10S	1S		1S		1ms		1us
+----------------------------------------------------------------------------------
+比如说  计数值为10  频率为1HZ  则定时的超时时间为多少? 
+10 * 1S = 10S 
+
+周期： 1/1 = 1S 
+
+
+定时  10s  1s  
+1s = 1000ms = 1000000us  = 1000000000ns
+</code></pre>
+<p>三 系统时钟<br>    系统时钟并不是由STM32提供的，而是由ARM-CORTEX-M3 核心提供<br>    系统定时器 （system timer | systick）<br>    如果想要系统定时器的定时长短，需要从什么角度分析？<br>    时钟频率  和  计数值 </p>
+<pre><code>1. 查找系统定时器的时钟频率
+打开《STM32F10x中文参考手册.pdf》
+P46 P47 图  6.2时钟  时钟树
+在STM32芯片中，一共有5钟时钟源
+    HSI  系统内部的高速时钟
+    HSE  系统外部的高速时钟
+    PLL   锁相环（倍频器） 
+    LSI   系统内部的低速时钟
+    LSE  系统外部的低速时钟
+系统定时器 的时钟频率是由SYSCLK提供
+SYSCLK的时钟频率可以由HSI HSE PLL
+    但是HSI是8MHz  HSE也是8MHZ 都不足以达到72MHZ
+    所以SYSCLK的时钟频率必须由PLL提供
+    因为PLL是倍频器本身不能产生时钟频率 所以需要基础时钟源
+PLL的基础时钟源可以由  HSI HSE  提供
+因为外部的晶振要比芯片内部的时钟源稳定
+所以PLL的基础时钟源由  HSE 提供
+
+2. 查找系统定时器的计数范围
+打开《Cortex-M3权威指南CnR2（电子书）.pdf》
+寄存器里有一些位对于软件工程师来说是”透明“的  
+透明是不可见的！
+--------------------------------
+通过该手册了解系统定时器一共有4个寄存器
+
+其中当前值寄存器和重装载值寄存器存储的是计数值,计数值的范围(24个0 ~24个1)
+计数值的范围 （0~16M-1）
+</code></pre>
+<p>四 位带<br>    C语言回顾:<br>    1.指针：<br>        int a;<br>        a &#x3D; 100;<br>        (&amp;a) &#x3D; 100;<br>        *((int *) 0x100000000) &#x3D; 100;<br>        地址  （volatile int *）0x100000000;<br>        访问   *（volatile int *）0x100000000;<br>    2.位操作:<br>        &#x2F;&#x2F;错误的  误将其他管脚的功能改变了<br>        &#x2F;&#x2F;应该只改变需要改变的位，其他位保持不变<br>        *(volatile int *) 0x10000000 &#x3D; 0x01000000; &#x2F;&#x2F;bit24位置1，bit25位置0<br>        &#x2F;&#x2F;正确的  先将24 25 位置0， 再将24位置1<br>        *(volatile int *) 0x10000000 &amp;&#x3D; 0xfcffffff;   c —&gt; 12 —&gt; 1100<br>        *(volatile int *) 0x10000000  |&#x3D; 0x01000000;<br>        &#x2F;&#x2F;标准做法<br>        *（volatile int *） 0x10000000 &amp;&#x3D;  ~(3&lt;&lt;24)；<br>        *（volatile int *） 0x10000000  |&#x3D;  1 &lt;&lt; 24；</p>
+<pre><code>    例如： 想要将0x12345678 这个地址的第9位置1
+    *(volatile int *) 0x12345678  |= (1&lt;&lt;9)；	
+    
+3. 位域：
+    struct Student &#123;
+        unsigned int x : 1;//冒号后面的数字表示要管理的位
+        unsigned int y : 2;
+        unsigned int z : 1;
+    &#125;;
+    union Unit 
+    &#123;
+        char c;
+        struct Student s;
+    &#125;;
+    
+    union Unit u;
+    u.c = 13；
+    printf(&quot;u.s.x = %d\n&quot;, u.s.x); //1
+    printf(&quot;u.s.y = %d\n&quot;, u.s.y); //2
+    printf(&quot;u.s.z = %d\n&quot;, u.s.z); //1
+    
+4. 位带
+    注意位带不是ST提供的，是ARM核心提供的
+    裸板的驱动程序访问的都是物理地址
+    
+    位带 ： 可以让程序员在操作外设寄存器的地址时，以原子操作的方式进行。
+    是把位带区的每一位都做一个地址别名，映射到位带别名区
+    将来程序员访问位带别名区，就相当于是访问位带区的某一位
+    操作0x22000008的位带映射区，就可以直接访问你的位带的bit 2
+    
+    #define BITBAND (ADDR, BITNUM)
+    ((ADDR &amp; 0xf0000000)) + 0x20000000 + ((ADDR &amp; 0xFFFFF) &lt;&lt; 5) + BITNUM &lt;&lt; 2 )
+    
+    char c = 13;  //00001101	
+    c = c &lt;&lt; 2;  //00110100 ---&gt; 52 = 13 * 4;	
+    按位左移 就是乘法 左移多少位就相当于乘以2的多少次方。
+    //上述公式可以将位带区的地址转换为位带别名区的地址
+    
+    
+    #define MEM_ADDR (ADDR)
+    *(volatile unsigned int *) (ADDR) 
+    //将十六进制的数转换成地址使用
+    #define BIT_BAND (ADDR, BITNUM)   MEM_ADDR(BITBAND(ADDR, BITNUM))
+    
+    #define PAOut(n)  BIT_BAND(GPIOA_ODR_ADDR, n);
+    #define PAIn(n)  BIT_BAND(GPIOA_IDR_ADDR, n);
+</code></pre>
+<p>五  串口<br>    UART&#x2F;USART —-&gt; 通信协议</p>
+<pre><code>有线通信	
+    以太网     网络7层结构    四层
+    RS232： 电气特性：
+        逻辑0 ： +3v ~ +15v
+        逻辑1： -3V ~15V
+        传输距离： &lt; 10m
+    RS485  工业级的串口  工控领域钟用的多
+        采用的是差分信号 传输时使用两根线 
+        TTL电平 是计算机内部使用的
+        低电平  &lt; 0.8v
+        高电平  &gt; 2.4v
+    M-BUS
+    PLC电力线通信
+
+无线通信
+    短距无线通信 ： 	
+        蓝牙
+        ZigBee
+        Nrf
+        Wifi
+    蜂窝移动网络 ：
+        2G  3G  4G  5G  6G.....
+    低功耗广域网络 : 
+        Lora
+        NB-IOT   (窄带物联网)
+        
+
+1. 串口的简介：
+    串行接口（com口）
+    板子链接上PC---》 右键计算机  ---》 管理 ---》 设备管理器 ---》 端口（com）
+    串行通信是一位一位进行顺序传输的，通信的方式简单，只需要一条数据线就可以通信了
+2. 串口的工作模式
+    单工模式：
+        任何时候数据只能朝一个方向传输
+    
+    半双工：
+        数据可以朝两个方向传输，但任何一个时刻只能朝一个方向传输
+
+    全双工：
+        数据可以同时两个方向传输
+</code></pre>
+<hr>
+<pre><code>3. 在STM32F103RBT6芯片中  IIC SPI UART/USART CAN。。。。。
+    USART: 通用同步异步收发器
+    UART: 通用异步收发器
+    
+同步： 需要等待应答，所以使用较少
+异步： 使用的居多
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/20/stm32_day04/" data-id="cl3d8l45y000d3ks6eg6t22gn" data-title="stm32入门-4" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/20/stm32_day03/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">stm32入门-3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/stm32/" style="font-size: 20px;">stm32</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/20/stm32_day04/">stm32入门-4</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/20/stm32_day03/">stm32入门-3</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/20/stm32_day02/">stm32入门-2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/20/stm32_day01/">stm32入门-1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 闹<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

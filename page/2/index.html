@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   
-  <title>标签: hosts | 闹的博客</title>
+  <title>闹的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="从记录走向成长与成熟">
 <meta property="og:type" content="website">
 <meta property="og:title" content="闹的博客">
-<meta property="og:url" content="https://hexgio.github.io/tags/hosts/index.html">
+<meta property="og:url" content="https://hexgio.github.io/page/2/index.html">
 <meta property="og:site_name" content="闹的博客">
 <meta property="og:description" content="从记录走向成长与成熟">
 <meta property="og:locale" content="zh_CN">
@@ -73,38 +73,54 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-05-19T15:57:11.431Z" itemprop="datePublished">5月 19</time>
+    <article id="post-vim篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/vim%E7%AF%87/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T04:24:38.000Z" itemprop="datePublished">2022-05-04</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
+      <a class="p-name article-title" href="/2022/05/04/vim%E7%AF%87/">vim</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="vim指令的一些操作"><a href="#vim指令的一些操作" class="headerlink" title="vim指令的一些操作"></a>vim指令的一些操作</h3><p><code>u</code> 撤销上次命令<br><code>Ctrl+r</code> 恢复撤销命令<br><code>x</code> 删除光标所在的字符或选中文字<br><code>d(移动命令)</code> 删除移动命令对应的内容<br><code>dd</code> 删除光标所在行，可以ndd复制多行<br><code>D</code> 删除至行尾<br><code>dw</code> 从光标位置删除到单词末尾<br><code>d0</code> 从光标位置删除到一行的起始位置<br><code>d&#125;</code> 从光标位置删除到段落结尾<br><code>ndd</code> 从光标位置向下连续删除 n 行<br><code>d代码行G</code> 从光标所在行 删除到 指定代码行 之间的所有代码<br><code>d’a</code> 从光标所在行 删除到 标记a 之间的所有代码<br><code>touch 文件名(或文件名+后缀)</code> 建立空文件<br><code>echo &#39;内容&#39; &gt; 文件</code> 将内容写入文件<br><code>x,X</code> #在一行字当中，x为向后删除-个字符,X为向前删除<br><code>nx</code> #n为数字，连续向后删除n个字符<br><code>dd</code> #删除游标所在的那一 -整列(常用)<br><code>ndd</code> #n为数字,删除光标所在的向下n列<br><code>d1G</code> #删除光标所在到第一行的所有数据<br><code>dG</code> #删除光标所在到最后一行的所有数据<br><code>d$</code> #删除游标所在处，到该行的最后一个字符<br><code>d0</code> #那个是数字的0，删除游标所在处，到该行的最前面一个字符<br><code>vy</code> #复制游标所在的那- -行(常用)<br><code>nyy</code> #n为数字。 复制光标所在的向下n列，例如20yy则是复制20 列(常用)<br><code>y1G</code> #复制游标所在列到第- 列的所有数据<br><code>yG</code> #复制游标所在列到最后一列的所有数据<br><code>y0</code> #复制光标所在的那个字符到该行行首的所有数据<br><code>y$</code> #复制光标所在的那个字符到该行行尾的所有数据<br><code>p,P</code> #p为将已复制的数据在光标下一行贴上，P则为贴在游标上一行!举例来说，我目前光标在第20行，且己经复制了10行数据。则按下p后，那10行数据会贴在原本的20标在第20行，且己经复制了10行数据。则按下p后，那10行数据会贴在原本的20行之后，亦即由21行开始贴。但如果是按下P呢?那么原本的第20行会被推到变成30行 ( 常用)<br><code>J</code> #将光标所在列与下一列的数据结合成同一列<br><code>c</code> #重复删除多个数据，例如向下删除10行，[10c]<br><code>u</code> #复原前一个动作。(常用)<br><code>Ctrl+r</code> #重做上一个动作。(常用)<br><code>.</code> #不要怀疑!这就是小数点!意思重复前一个动作的意思。如果你想要重复删除、重复贴上等等动作，按下小数点就好了! (常用)</p>
+<h3 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h3><p><code>cat a&gt;b</code> #将a中文件覆盖到文件b中<br><code>cat a&gt;&gt;b</code> #将a中文件追加到文件b中</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/04/vim%E7%AF%87/" data-id="cl3d8l461000g3ks6a36m79h4" data-title="vim" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
+
   
 
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         

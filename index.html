@@ -73,10 +73,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hosts原内容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-stm32_day04" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" class="article-date">
-  <time class="dt-published" datetime="2022-05-13T03:42:54.040Z" itemprop="datePublished">2022-05-13</time>
+    <a href="/2022/05/20/stm32_day04/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T16:35:55.099Z" itemprop="datePublished">2022-05-20</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
+      <a class="p-name article-title" href="/2022/05/20/stm32_day04/">stm32入门-4</a>
     </h1>
   
 
@@ -95,12 +95,513 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="hosts原文件内容"><a href="#hosts原文件内容" class="headerlink" title="hosts原文件内容"></a>hosts原文件内容</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">　# Copyright (c) 1993-2009 Microsoft Corp.</span><br><span class="line"></span><br><span class="line">　　#</span><br><span class="line"></span><br><span class="line">　　# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span><br><span class="line"></span><br><span class="line">　　#</span><br><span class="line"></span><br><span class="line">　　# This file contains the mappings of IP addresses to host names. Each</span><br><span class="line"></span><br><span class="line">　　# entry should be kept on an individual line. The IP address should</span><br><span class="line"></span><br><span class="line">　　# be placed in the first column followed by the corresponding host name.</span><br><span class="line"></span><br><span class="line">　　# The IP address and the host name should be separated by at least one</span><br><span class="line"></span><br><span class="line">　　# space.</span><br><span class="line"></span><br><span class="line">　　#</span><br><span class="line"></span><br><span class="line">　　# Additionally, comments (such as these) may be inserted on individual</span><br><span class="line"></span><br><span class="line">　　# lines or following the machine name denoted by a &#x27;#&#x27; symbol.</span><br><span class="line"></span><br><span class="line">　　#</span><br><span class="line"></span><br><span class="line">　　# For example:</span><br><span class="line"></span><br><span class="line">　　#</span><br><span class="line"></span><br><span class="line">　　# 102.54.94.97 rhino.acme.com # source server</span><br><span class="line"></span><br><span class="line">　　# 38.25.63.10 x.acme.com # x client host</span><br><span class="line"></span><br><span class="line">　　# localhost name resolution is handled within DNS itself.</span><br><span class="line"></span><br><span class="line">　　# 127.0.0.1 localhost</span><br><span class="line"></span><br><span class="line">　　# ::1 localhost</span><br></pre></td></tr></table></figure>
+        <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="链接-https-pan-baidu-com-s-1-4Bs4MfsNj7GRTS-CEX1-A-pwd-kg2i-提取码-kg2i"><a href="#链接-https-pan-baidu-com-s-1-4Bs4MfsNj7GRTS-CEX1-A-pwd-kg2i-提取码-kg2i" class="headerlink" title="链接: https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i 提取码: kg2i"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i">https://pan.baidu.com/s/1-4Bs4MfsNj7GRTS-CEX1-A?pwd=kg2i</a> 提取码: kg2i</h6><h2 id="一-编译的过程"><a href="#一-编译的过程" class="headerlink" title="一 编译的过程"></a>一 编译的过程</h2><pre><code>源程序	预处理之后的源程序      汇编程序   	目标程序
+hello.c  ----》 hello.i    -----》 hello.s  -----》 hello.o  ---》 可执行程序
+         预处理	   编译 		汇编	   链接 
+
+预处理： 在C语言中凡是以#开头的内容，都属于预处理
+文件的包含   #include 
+条件编译    #ifndef #define #endif
+宏  
+gcc -E hello.c -o hello.i 	
+
+编译： 将预处理之后的文件编译为汇编文件   
+gcc -S hello.i -o hello.s
+
+汇编: hello.s 汇编成目标文件
+gcc -c hello.s -o hello.o 
+
+链接： 将目标文件和库文件，运行时文件链接生成可执行文件
+gcc hello.o 		
+</code></pre>
+<p>二  定时器<br>    延时<br>    粗略延时   ——while  for<br>    精确延时   ——定时器<br>    在STM32芯片中有很多的定时器资源<br>    可以分为普通定时器和特殊定时器 (wdg RTC)</p>
+<pre><code>看门狗出了定时的功能 和重启复位功能
+达到了定时时间，自动重启
+
+RTC: 提供计时功能  年  月  日...  
+BIOS  uboot 跨平台 优点 移植  bootloader 	
+PMON
+UEFI 1000+  
+操作系统
+
+无论是普通定时器  还是特殊定时器，都有两个因素决定定时时长
+时钟频率  和  计数值 
+
+计数 	 10        	10 		72M		72000		72
+频率	 1HZ      	10HZ	 	72MHz		72MHz		72MHz
+定时时间 	 10S	1S		1S		1ms		1us
+----------------------------------------------------------------------------------
+比如说  计数值为10  频率为1HZ  则定时的超时时间为多少? 
+10 * 1S = 10S 
+
+周期： 1/1 = 1S 
+
+
+定时  10s  1s  
+1s = 1000ms = 1000000us  = 1000000000ns
+</code></pre>
+<p>三 系统时钟<br>    系统时钟并不是由STM32提供的，而是由ARM-CORTEX-M3 核心提供<br>    系统定时器 （system timer | systick）<br>    如果想要系统定时器的定时长短，需要从什么角度分析？<br>    时钟频率  和  计数值 </p>
+<pre><code>1. 查找系统定时器的时钟频率
+打开《STM32F10x中文参考手册.pdf》
+P46 P47 图  6.2时钟  时钟树
+在STM32芯片中，一共有5钟时钟源
+    HSI  系统内部的高速时钟
+    HSE  系统外部的高速时钟
+    PLL   锁相环（倍频器） 
+    LSI   系统内部的低速时钟
+    LSE  系统外部的低速时钟
+系统定时器 的时钟频率是由SYSCLK提供
+SYSCLK的时钟频率可以由HSI HSE PLL
+    但是HSI是8MHz  HSE也是8MHZ 都不足以达到72MHZ
+    所以SYSCLK的时钟频率必须由PLL提供
+    因为PLL是倍频器本身不能产生时钟频率 所以需要基础时钟源
+PLL的基础时钟源可以由  HSI HSE  提供
+因为外部的晶振要比芯片内部的时钟源稳定
+所以PLL的基础时钟源由  HSE 提供
+
+2. 查找系统定时器的计数范围
+打开《Cortex-M3权威指南CnR2（电子书）.pdf》
+寄存器里有一些位对于软件工程师来说是”透明“的  
+透明是不可见的！
+--------------------------------
+通过该手册了解系统定时器一共有4个寄存器
+
+其中当前值寄存器和重装载值寄存器存储的是计数值,计数值的范围(24个0 ~24个1)
+计数值的范围 （0~16M-1）
+</code></pre>
+<p>四 位带<br>    C语言回顾:<br>    1.指针：<br>        int a;<br>        a &#x3D; 100;<br>        (&amp;a) &#x3D; 100;<br>        *((int *) 0x100000000) &#x3D; 100;<br>        地址  （volatile int *）0x100000000;<br>        访问   *（volatile int *）0x100000000;<br>    2.位操作:<br>        &#x2F;&#x2F;错误的  误将其他管脚的功能改变了<br>        &#x2F;&#x2F;应该只改变需要改变的位，其他位保持不变<br>        *(volatile int *) 0x10000000 &#x3D; 0x01000000; &#x2F;&#x2F;bit24位置1，bit25位置0<br>        &#x2F;&#x2F;正确的  先将24 25 位置0， 再将24位置1<br>        *(volatile int *) 0x10000000 &amp;&#x3D; 0xfcffffff;   c —&gt; 12 —&gt; 1100<br>        *(volatile int *) 0x10000000  |&#x3D; 0x01000000;<br>        &#x2F;&#x2F;标准做法<br>        *（volatile int *） 0x10000000 &amp;&#x3D;  ~(3&lt;&lt;24)；<br>        *（volatile int *） 0x10000000  |&#x3D;  1 &lt;&lt; 24；</p>
+<pre><code>    例如： 想要将0x12345678 这个地址的第9位置1
+    *(volatile int *) 0x12345678  |= (1&lt;&lt;9)；	
+    
+3. 位域：
+    struct Student &#123;
+        unsigned int x : 1;//冒号后面的数字表示要管理的位
+        unsigned int y : 2;
+        unsigned int z : 1;
+    &#125;;
+    union Unit 
+    &#123;
+        char c;
+        struct Student s;
+    &#125;;
+    
+    union Unit u;
+    u.c = 13；
+    printf(&quot;u.s.x = %d\n&quot;, u.s.x); //1
+    printf(&quot;u.s.y = %d\n&quot;, u.s.y); //2
+    printf(&quot;u.s.z = %d\n&quot;, u.s.z); //1
+    
+4. 位带
+    注意位带不是ST提供的，是ARM核心提供的
+    裸板的驱动程序访问的都是物理地址
+    
+    位带 ： 可以让程序员在操作外设寄存器的地址时，以原子操作的方式进行。
+    是把位带区的每一位都做一个地址别名，映射到位带别名区
+    将来程序员访问位带别名区，就相当于是访问位带区的某一位
+    操作0x22000008的位带映射区，就可以直接访问你的位带的bit 2
+    
+    #define BITBAND (ADDR, BITNUM)
+    ((ADDR &amp; 0xf0000000)) + 0x20000000 + ((ADDR &amp; 0xFFFFF) &lt;&lt; 5) + BITNUM &lt;&lt; 2 )
+    
+    char c = 13;  //00001101	
+    c = c &lt;&lt; 2;  //00110100 ---&gt; 52 = 13 * 4;	
+    按位左移 就是乘法 左移多少位就相当于乘以2的多少次方。
+    //上述公式可以将位带区的地址转换为位带别名区的地址
+    
+    
+    #define MEM_ADDR (ADDR)
+    *(volatile unsigned int *) (ADDR) 
+    //将十六进制的数转换成地址使用
+    #define BIT_BAND (ADDR, BITNUM)   MEM_ADDR(BITBAND(ADDR, BITNUM))
+    
+    #define PAOut(n)  BIT_BAND(GPIOA_ODR_ADDR, n);
+    #define PAIn(n)  BIT_BAND(GPIOA_IDR_ADDR, n);
+</code></pre>
+<p>五  串口<br>    UART&#x2F;USART —-&gt; 通信协议</p>
+<pre><code>有线通信	
+    以太网     网络7层结构    四层
+    RS232： 电气特性：
+        逻辑0 ： +3v ~ +15v
+        逻辑1： -3V ~15V
+        传输距离： &lt; 10m
+    RS485  工业级的串口  工控领域钟用的多
+        采用的是差分信号 传输时使用两根线 
+        TTL电平 是计算机内部使用的
+        低电平  &lt; 0.8v
+        高电平  &gt; 2.4v
+    M-BUS
+    PLC电力线通信
+
+无线通信
+    短距无线通信 ： 	
+        蓝牙
+        ZigBee
+        Nrf
+        Wifi
+    蜂窝移动网络 ：
+        2G  3G  4G  5G  6G.....
+    低功耗广域网络 : 
+        Lora
+        NB-IOT   (窄带物联网)
+        
+
+1. 串口的简介：
+    串行接口（com口）
+    板子链接上PC---》 右键计算机  ---》 管理 ---》 设备管理器 ---》 端口（com）
+    串行通信是一位一位进行顺序传输的，通信的方式简单，只需要一条数据线就可以通信了
+2. 串口的工作模式
+    单工模式：
+        任何时候数据只能朝一个方向传输
+    
+    半双工：
+        数据可以朝两个方向传输，但任何一个时刻只能朝一个方向传输
+
+    全双工：
+        数据可以同时两个方向传输
+</code></pre>
+<hr>
+<pre><code>3. 在STM32F103RBT6芯片中  IIC SPI UART/USART CAN。。。。。
+    USART: 通用同步异步收发器
+    UART: 通用异步收发器
+    
+同步： 需要等待应答，所以使用较少
+异步： 使用的居多
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/20/stm32_day04/" data-id="cl3d8l45y000d3ks6eg6t22gn" data-title="stm32入门-4" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-stm32_day03" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/20/stm32_day03/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T16:29:09.367Z" itemprop="datePublished">2022-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/20/stm32_day03/">stm32入门-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="链接-https-pan-baidu-com-s-106WORFLrE4Vs-xyr1riT0Q-pwd-pi5c-提取码-pi5c"><a href="#链接-https-pan-baidu-com-s-106WORFLrE4Vs-xyr1riT0Q-pwd-pi5c-提取码-pi5c" class="headerlink" title="链接: https://pan.baidu.com/s/106WORFLrE4Vs-xyr1riT0Q?pwd=pi5c 提取码: pi5c"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/106WORFLrE4Vs-xyr1riT0Q?pwd=pi5c">https://pan.baidu.com/s/106WORFLrE4Vs-xyr1riT0Q?pwd=pi5c</a> 提取码: pi5c</h6><p>一 操作GPIO的输入输出功能<br>    芯片的管脚是多功能复用的<br>    一个管脚最多会有四种功能<br>    输出功能<br>        开漏输出  管脚只能输出低电平输出不了高电平<br>        推挽输出  管脚既可以输出低电平也可以输出高电平<br>    输入功能<br>        上拉输入  在默认的情况下呈现高电平<br>        下拉输入  在默认的情况下呈现低电平<br>        浮空输入  在默认的情况下管脚状态不确定<br>    复用功能（timer USART IIC SPI…）<br>        开漏复用<br>        推挽复用<br>    模拟功能<br>        模拟输入功能 （ADC 在模拟转换时会使用）</p>
+<pre><code>Volatile 关键字的作用
+告诉CPU，每次在取变量的值的时候，不要去缓存中取，每次都要到内存中重新加载变量的值。
+------------------------------------------
+
+补充LED流水灯和蜂鸣器的实验。
+</code></pre>
+<p>二 GPIO的输入功能<br>    KEY0        PC9<br>    KEY1	PC8	<br>    KEY2 	PA0<br>    注意： 打开使能时钟时，需要将GPIOA组的时钟和C组的时钟都打开     |<br>    KEY0 KEY1 在没有按下的时候应当检测到高电平，按下之后检测到低电平<br>    KEY2 在没有按下的时候应当检测到低电平，在按下的时候检测到高电平</p>
+<pre><code>KEY0 KEY1 在操作的时候，属于上拉输入
+KEY2 在操作的时候，属于下拉输入
+
+悬赏任务: 
+KEY0 ---&gt; LED0 
+KEY1---&gt; LED1
+KEY2 ---&gt; LED2
+例子 
+当KEY0按下抬起后，LED0常亮，当KEY0再一次按下抬起的时候，LED0就灭了
+当KEY1按下抬起后，LED1常亮，当KEY1再一次按下抬起的时候，LED1就灭了
+当KEY2按下抬起后，LED2常亮，当KEY2再一次按下抬起的时候，LED2就灭了
+
+前6组，每组加6分
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/20/stm32_day03/" data-id="cl3d8l45w000a3ks6ht0jh70k" data-title="stm32入门-3" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-stm32_day02" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/20/stm32_day02/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T16:22:14.603Z" itemprop="datePublished">2022-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/20/stm32_day02/">stm32入门-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="复链接-https-pan-baidu-com-s-1bOcjLb75u3KTk92lQKgTxQ-pwd-ajjn-提取码-ajjn"><a href="#复链接-https-pan-baidu-com-s-1bOcjLb75u3KTk92lQKgTxQ-pwd-ajjn-提取码-ajjn" class="headerlink" title="复链接: https://pan.baidu.com/s/1bOcjLb75u3KTk92lQKgTxQ?pwd=ajjn 提取码: ajjn"></a>复链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bOcjLb75u3KTk92lQKgTxQ?pwd=ajjn">https://pan.baidu.com/s/1bOcjLb75u3KTk92lQKgTxQ?pwd=ajjn</a> 提取码: ajjn</h6><p>一. 数据类型</p>
+<pre><code>void int char short float double...
+其实在计算机里是没有数据类型的，说白了，就是访问内存的规则和这种规则的相关操作。
+访问内存，你要遵循的方式。
+注意: void 类型和无类型是两种概念，无类型只关注地址。
+指针类型 指针并不能简单说是地址，它是一种类型！
+int var = 300;
+int *p = &amp;var;  
+数组  函数  结构体  ---&gt;都是一种数据类型  
+int func_t (int x,int y);//声明
+typedef int func_t (int, int);
+func_t *p;
+
+char * str_t;
+typedef char *str_t;	
+str_t a,b; ------char *a;  char *b;
+
+struct node&#123;
+    int data;
+    struct node *next;//可以的，结构体的大小确定
+&#125;;
+typedef struct node node_t;
+node_t 是struct node的别名
+typedef node_t *list_t;   ===== node * 
+list_t head;
+</code></pre>
+<p>二 物联网的基础架构</p>
+<pre><code>ARM core   Arm+安卓   mips   LA   powerpc   intel+win
+A  R  M 
+STM32F103
+M系列 ---以很低的价格就可以实现32bit的性能
+A系列  ---cortex A53 s5p6818 用在高大上的领域  LCD 网络 游戏开发 通信...
+R系列  ---实时性较强的领域 航天 精密  必须在一定时间内完成操作
+
+物联网： 什么是物联网（Internet of things）
+嵌入式： 嵌入式系统是以应用为中心，以计算机技术为基础，软硬件可剪裁，适应应用系统
+               对功能，成本，体积以及功耗严格要求的专用计算机系统。20 ---》 16  100万 
+
+PHY---物理链路层  D  状态   C  状态
+时钟电路  控制器   动态调配   
+
+
+嵌入式是物联网的保障和基座，物联网是基于嵌入式系统的应用程序及数据上报，下载等分析和处理。
+
+物联网的层次：	
+应用层：物联网云平台也会有配套的手机APP
+平台层：东方瑞通  ESLink 
+    华为    Ocean connect
+    小米    小米IOT
+    阿里    AIot 
+网络层：手机热点
+感知层：STM32F103RBT6 + ESP8266
+</code></pre>
+<p>三 介绍开发板设备</p>
+<pre><code>AHB AHB1 AHB2 都是三总线，叫做高速总线
+APB1 APB2 也是三总线，叫做外设总线
+
+冯诺依曼体系结构: 取指令 取数据 用的是同一根总线
+哈佛体系结构:  取指令 取数据 用的是不同的总线
+cpu 是通过总线来访问外设的：
+数据总线  地址总线  控制总线
+
+想要给0x10001234 这个地址存储十进制的数据100
+</code></pre>
+<p>四 操作GPIO的输入输出功能</p>
+<pre><code>输入功能： 相当于检测（功能按键）
+输出功能： 相当于控制 （LED 蜂鸣器）
+写一个函数： 
+1.功能
+2.参数
+3.返回值
+在STM32中GPIO资源非常丰富
+一共有5组GPIO,每组GPIO会有16管脚
+
+通过芯片封装图可以了解64个管脚,每个管脚的定义
+出现最多的就是GPIO管脚,其他的外设资源如何体现?
+芯片的管脚是多功能复用型的管脚
+一个管脚最多会有
+    输入功能
+        上拉输入		在默认情况下管脚呈现高电平
+        下拉输入		在默认情况下管脚呈现低电平
+        浮空输入		在默认情况下管脚状态不确定
+    输出功能
+        开漏输出		管脚只能输出低电平输出不了高电平
+        推挽输出		管脚既可以输出低电平也可以输出高端平
+    复用功能(timer USART IIC SPI)
+        开漏复用		
+        推挽复用
+    模拟功能
+        模拟输入功能	ADC(在模拟转换时会使用)
+         
+LED实验步骤：
+1. 通过开发板原理图找到LED灯所连接的芯片的管脚
+    LED0    	PC1
+    LED1 	PC2
+    LED2	PC3
+    管脚输出高电平  灯亮
+    管脚输出低电平  灯灭
+2. 通过APB2总线使能GPIOC组的时钟
+3. 初始化GPIO管脚
+4. 控制管脚输出高低电平
+
+悬赏任务:
+1. 根据LED灯的驱动程序，完成流水灯 前4组  +4 
+ 0 1 2 
+2. 根据LED灯的项目工程，拷贝一份，搞定蜂鸣器 +5
+
+  
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/20/stm32_day02/" data-id="cl3d8l45v00093ks69h4mb5z5" data-title="stm32入门-2" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-stm32_day01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/20/stm32_day01/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T16:11:20.799Z" itemprop="datePublished">2022-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/20/stm32_day01/">stm32入门-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="链接-https-pan-baidu-com-s-16H5Fy8JCkOP3l68kZ-qtJw-pwd-4snd-提取码-4snd"><a href="#链接-https-pan-baidu-com-s-16H5Fy8JCkOP3l68kZ-qtJw-pwd-4snd-提取码-4snd" class="headerlink" title="链接: https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd 提取码: 4snd"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd">https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd</a> 提取码: 4snd</h6><h6 id="链接-https-pan-baidu-com-s-1uMh5hj63cPU4DhzMIZG0vA-pwd-b4a1-提取码-b4a1"><a href="#链接-https-pan-baidu-com-s-1uMh5hj63cPU4DhzMIZG0vA-pwd-b4a1-提取码-b4a1" class="headerlink" title="链接: https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1 提取码: b4a1"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1">https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1</a> 提取码: b4a1</h6><ol>
+<li><p>介绍<br> 刘阳 </p>
+<p> 上课时间： 上午：8点上线 –》 9点50   10点10 —》 11点30<br>   下午： 宿舍做实验 下午5点之前做完实验 技术关键点 –》 文字+图片的形式记录<br> 基础软件  裸板 不跑操作系统<br> 应用软件<br> 系统软件  BIOS GRUB Kernel(内核)<br> 中断   UEFI  Event<br>  练武：<br> 内练一口气，外练筋骨皮！–》 铁头功 金刚腿 金钟罩 铁布衫			<br> 产品  4  内功深厚  时间周期长 调研 写文档（接口）  codeing 期限  测试 修改bug 测试  稳定 （不会死机，长稳定运行，可靠）总结<br> 项目<br> 99%的同学  –》 linux </p>
+<p> 车： 离合  油门  刹车 –》 驱动车<br> 操作系统： PC —》 接口  C （printf fopen …）C库函数 —》 系统调用Systemcall (open) —&gt; kernel (sys_open) fs  —&gt; （硬盘）USB 博大精深 3.0（丢盘）<br> Linux 高级环境编程 –》 多进程&#x2F;多线程 </p>
+<p> C   &#x2F;   C++<br> unix  操作系统  99.9%代码C写的  + 0.1%汇编<br> linux 操作系统  99.9%代码C写的  + 0.1%汇编<br> windows操作系统  75~80%的代码C写的 + 汇编</p>
+<ol>
+<li>C的执行效率高（黑话）</li>
+<li>C语言可以实现其他语言所实现的所有功能</li>
+</ol>
+<p> C语言 面向过程   变量   数组  指针  结构体<br> C语言程序设计 （第三版）</p>
+<p> int var &#x3D; 300; &#x2F;&#x2F;变量的定义     int var;<br>             var &#x3D; 300; &#x2F;&#x2F;变量的赋值<br> int var;&#x2F;&#x2F;变量的声明<br> 变量的声明和变量的定义的区别：<br> 变量的声明式作用域的扩充，变量的声明并不分配空间。<br> 变量的定义是要为变量分配空间的！</p>
+<p> C++   面向对象  万物皆对象 </p>
+<p> 智能云设备  基于物联网技术<br> 刘阳 专业 班级  </p>
+<p> 考核：	</p>
+<ol>
+<li>产品的宣发 PPT + Code + 宣讲 结课之前两天，前一天半  —》 50%</li>
+<li>线上提问20% —》 组的方式 —》 20%</li>
+<li>小考试 30%  —》 10道题 —》 30% –》 班长统计</li>
+</ol>
+</li>
+<li><p>C语言的基本功</p>
+<ol>
+<li><p>编写头文件<br> .c   #include &lt;stdio.h&gt;	<br> 头文件中说明接口.<br> #ifndef 宏    头文件卫士<br> #define 宏<br> 函数的声明<br> 类型的定义<br> 文件的包含<br> 宏定义<br> 变量的声明<br> #endif </p>
+</li>
+<li><p>数据类型<br> void int char short float double…<br> 其实在计算机里是没有数据类型的，说白了，就是访问内存的规则和这种规则的相关操作。<br> 访问内存，你要遵循的方式。<br> 注意: void 类型和无类型是两种概念，无类型只关注地址。<br> 指针类型 指针并不能简单说是地址，它是一种类型！<br> int var &#x3D; 300;<br> int *p &#x3D; &amp;var;</p>
+</li>
+</ol>
+<p> 数组  函数  结构体  —&gt;都是一种数据类型<br> int func_t (int x,int y);<br> typedef int func_t (int, int);</p>
+<p> struct node{<br>     int data;<br>     struct node next;&#x2F;&#x2F;不行的，不确定结构体的大小<br>     struct node *next;&#x2F;&#x2F;可以的，结构体的大小确定<br> };</p>
+</li>
+<li><p>搭建开发环境:<br> windows 环境</p>
+<ol>
+<li>安装Keil (记得打补丁)</li>
+<li>安装驱动</li>
+<li>测试开发环境是否正常 –》 rebuild</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexgio.github.io/2022/05/20/stm32_day01/" data-id="cl3d8l45t00063ks64mcf9mx8" data-title="stm32入门-1" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hosts原内容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T15:57:11.431Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="hosts原文件内容"><a href="#hosts原文件内容" class="headerlink" title="hosts原文件内容"></a>hosts原文件内容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">　<span class="comment"># Copyright (c) 1993-2009 Microsoft Corp.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># This file contains the mappings of IP addresses to host names. Each</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># entry should be kept on an individual line. The IP address should</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># be placed in the first column followed by the corresponding host name.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># The IP address and the host name should be separated by at least one</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># space.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># Additionally, comments (such as these) may be inserted on individual</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># lines or following the machine name denoted by a &#x27;#&#x27; symbol.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># For example:</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 102.54.94.97 rhino.acme.com # source server</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 38.25.63.10 x.acme.com # x client host</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># localhost name resolution is handled within DNS itself.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 127.0.0.1 localhost</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># ::1 localhost</span></span><br></pre></td></tr></table></figure>
 <h2 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" data-id="cl33wu965000454s640pbfs6m" data-title="如何编辑hosts" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" data-id="cl3d8l45q00043ks6f0ld1krl" data-title="如何编辑hosts" class="article-share-link">分享</a>
       
       
       
@@ -142,7 +643,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/ssh%E7%AF%87/" data-id="cl33wu966000554s6ecup8tlt" data-title="termux-openssh" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/ssh%E7%AF%87/" data-id="cl3d8l45s00053ks67lp9auql" data-title="termux-openssh" class="article-share-link">分享</a>
       
       
       
@@ -250,7 +751,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/" data-id="cl33wu962000254s65yb72dnm" data-title="hexo&amp;git" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/hexoandgit%E7%AF%87/" data-id="cl3d8l45o00023ks6fawbebrj" data-title="hexo&amp;git" class="article-share-link">分享</a>
       
       
       
@@ -307,7 +808,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/git/" data-id="cl33wu95s000054s6d8e8cey9" data-title="git" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/git/" data-id="cl3d8l45e00003ks6albiadny" data-title="git" class="article-share-link">分享</a>
       
       
       
@@ -346,7 +847,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/gitstudy/" data-id="cl33wu95z000154s649br2vza" data-title="git教程" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/gitstudy/" data-id="cl3d8l45l00013ks60mcia8i5" data-title="git教程" class="article-share-link">分享</a>
       
       
       
@@ -389,7 +890,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/13/termux/" data-id="cl33wu967000654s6gqpj3hug" data-title="termux" class="article-share-link">分享</a>
+      <a data-url="https://hexgio.github.io/2022/05/13/termux/" data-id="cl3d8l45z000e3ks6aj21adag" data-title="termux" class="article-share-link">分享</a>
       
       
       
@@ -403,49 +904,12 @@
 
 
   
-    <article id="post-vim篇" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/04/vim%E7%AF%87/" class="article-date">
-  <time class="dt-published" datetime="2022-05-04T04:24:38.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/04/vim%E7%AF%87/">vim</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="vim指令的一些操作"><a href="#vim指令的一些操作" class="headerlink" title="vim指令的一些操作"></a>vim指令的一些操作</h3><p><code>u</code> 撤销上次命令<br><code>Ctrl+r</code> 恢复撤销命令<br><code>x</code> 删除光标所在的字符或选中文字<br><code>d(移动命令)</code> 删除移动命令对应的内容<br><code>dd</code> 删除光标所在行，可以ndd复制多行<br><code>D</code> 删除至行尾<br><code>dw</code> 从光标位置删除到单词末尾<br><code>d0</code> 从光标位置删除到一行的起始位置<br><code>d&#125;</code> 从光标位置删除到段落结尾<br><code>ndd</code> 从光标位置向下连续删除 n 行<br><code>d代码行G</code> 从光标所在行 删除到 指定代码行 之间的所有代码<br><code>d’a</code> 从光标所在行 删除到 标记a 之间的所有代码<br><code>touch 文件名(或文件名+后缀)</code> 建立空文件<br><code>echo &#39;内容&#39; &gt; 文件</code> 将内容写入文件<br><code>x,X</code> #在一行字当中，x为向后删除-个字符,X为向前删除<br><code>nx</code> #n为数字，连续向后删除n个字符<br><code>dd</code> #删除游标所在的那一 -整列(常用)<br><code>ndd</code> #n为数字,删除光标所在的向下n列<br><code>d1G</code> #删除光标所在到第一行的所有数据<br><code>dG</code> #删除光标所在到最后一行的所有数据<br><code>d$</code> #删除游标所在处，到该行的最后一个字符<br><code>d0</code> #那个是数字的0，删除游标所在处，到该行的最前面一个字符<br><code>vy</code> #复制游标所在的那- -行(常用)<br><code>nyy</code> #n为数字。 复制光标所在的向下n列，例如20yy则是复制20 列(常用)<br><code>y1G</code> #复制游标所在列到第- 列的所有数据<br><code>yG</code> #复制游标所在列到最后一列的所有数据<br><code>y0</code> #复制光标所在的那个字符到该行行首的所有数据<br><code>y$</code> #复制光标所在的那个字符到该行行尾的所有数据<br><code>p,P</code> #p为将已复制的数据在光标下一行贴上，P则为贴在游标上一行!举例来说，我目前光标在第20行，且己经复制了10行数据。则按下p后，那10行数据会贴在原本的20标在第20行，且己经复制了10行数据。则按下p后，那10行数据会贴在原本的20行之后，亦即由21行开始贴。但如果是按下P呢?那么原本的第20行会被推到变成30行 ( 常用)<br><code>J</code> #将光标所在列与下一列的数据结合成同一列<br><code>c</code> #重复删除多个数据，例如向下删除10行，[10c]<br><code>u</code> #复原前一个动作。(常用)<br><code>Ctrl+r</code> #重做上一个动作。(常用)<br><code>.</code> #不要怀疑!这就是小数点!意思重复前一个动作的意思。如果你想要重复删除、重复贴上等等动作，按下小数点就好了! (常用)</p>
-<h3 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h3><p><code>cat a&gt;b</code> #将a中文件覆盖到文件b中<br><code>cat a&gt;&gt;b</code> #将a中文件追加到文件b中</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hexgio.github.io/2022/05/04/vim%E7%AF%87/" data-id="cl33wu96a000954s675q8fmmw" data-title="vim" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -458,7 +922,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hosts/" rel="tag">hosts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stm32/" rel="tag">stm32</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
     </div>
   </div>
 
@@ -468,7 +932,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a>
+      <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/stm32/" style="font-size: 20px;">stm32</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a>
     </div>
   </div>
 
@@ -490,23 +954,23 @@
       <ul>
         
           <li>
-            <a href="/2022/05/13/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
+            <a href="/2022/05/20/stm32_day04/">stm32入门-4</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/ssh%E7%AF%87/">termux-openssh</a>
+            <a href="/2022/05/20/stm32_day03/">stm32入门-3</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/hexoandgit%E7%AF%87/">hexo&amp;git</a>
+            <a href="/2022/05/20/stm32_day02/">stm32入门-2</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/git/">git</a>
+            <a href="/2022/05/20/stm32_day01/">stm32入门-1</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/gitstudy/">git教程</a>
+            <a href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">如何编辑hosts</a>
           </li>
         
       </ul>
