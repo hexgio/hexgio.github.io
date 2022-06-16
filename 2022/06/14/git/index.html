@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hexgio.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="安装好git后创建一个目录用来初始化为git可管理的仓库git初始化建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。 1234567891011mkdir ck  cd ck  git init  git config --global user.name &quot;name&quot; #设置全局用户名git config --global user.email">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://hexgio.github.io/2022/06/14/git/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="安装好git后创建一个目录用来初始化为git可管理的仓库git初始化建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。 1234567891011mkdir ck  cd ck  git init  git config --global user.name &quot;name&quot; #设置全局用户名git config --global user.email">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-13T19:35:56.133Z">
+<meta property="article:modified_time" content="2022-06-13T19:35:56.133Z">
+<meta property="article:author" content="夜闹">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hexgio.github.io/2022/06/14/git/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>git | 闹的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">闹的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/14/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-14 03:35:56" itemprop="dateCreated datePublished" datetime="2022-06-14T03:35:56+08:00">2022-06-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="安装好git后创建一个目录用来初始化为git可管理的仓库"><a href="#安装好git后创建一个目录用来初始化为git可管理的仓库" class="headerlink" title="安装好git后创建一个目录用来初始化为git可管理的仓库"></a>安装好git后创建一个目录用来初始化为git可管理的仓库</h2><h4 id="git初始化"><a href="#git初始化" class="headerlink" title="git初始化"></a>git初始化</h4><p>建立一个空文件夹，进入这个文件夹执行初始化命令，配置用户名跟邮箱，添加远程仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ck  </span><br><span class="line"><span class="built_in">cd</span> ck  </span><br><span class="line">git init  </span><br><span class="line">git config --global user.name <span class="string">&quot;name&quot;</span> <span class="comment">#设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email&quot;</span> <span class="comment">#设置全局邮箱</span></span><br><span class="line">vi filename <span class="comment">#创建并编辑该文件</span></span><br><span class="line">git add &lt;file-name&gt; <span class="comment">#添加本地文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;文件描述&quot;</span> <span class="comment">#添加描述 -mark #提交并添加文件描述</span></span><br><span class="line">git remote add origin 远程仓库地址 <span class="comment">#添加远程仓库</span></span><br><span class="line">git push -u origin master <span class="comment">#将本地文件推送到远程仓库的master分支</span></span><br><span class="line">git remote set-url origin 远程仓库地址 <span class="comment">#如果已添加过远程仓库，这条命令可以修改远程仓库。</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建本地分支"><a href="#创建本地分支" class="headerlink" title="创建本地分支"></a>创建本地分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branchname <span class="comment">#创建本地分支并切换到该分支</span></span><br><span class="line"><span class="built_in">touch</span> filename <span class="comment">#创建一个空文件</span></span><br><span class="line">git add filename <span class="comment">#将该文件添加到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;文件描述&quot;</span></span><br><span class="line">git push -u origin master <span class="comment">#将内容推送到远程分支</span></span><br><span class="line">git push origin branchname <span class="comment">#提交分支</span></span><br></pre></td></tr></table></figure>
+<h3 id="git-push报错解决"><a href="#git-push报错解决" class="headerlink" title="git push报错解决"></a>git push报错解决</h3><p>进行push前先将远程仓库pull到本地仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master  </span><br><span class="line">git push -u origin master  </span><br><span class="line">git push -u origin master -f <span class="comment">#强制push本地仓库到远程(这种情况不会进行merge，强制push后过程文件可能会丢失，不建议使用此方法)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git删除分支"><a href="#git删除分支" class="headerlink" title="git删除分支"></a>git删除分支</h3><h5 id="git查看分支"><a href="#git查看分支" class="headerlink" title="git查看分支"></a>git查看分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git branch  <span class="comment">#查看本地分支</span></span><br><span class="line">git branch -r <span class="comment">#查看远程分支</span></span><br><span class="line">git branch -a <span class="comment">#查看本地和远程分支</span></span><br><span class="line">git branch -d 本地分支名 <span class="comment">#删除本地分支</span></span><br><span class="line">git push origin --delete 远程分支名 <span class="comment">#删除远程分支</span></span><br><span class="line">git push origin 远程分支名 <span class="comment">#推送空分支到远程(删除远程分支的另一种实现)</span></span><br></pre></td></tr></table></figure>
+<h3 id="git修改远程仓库地址"><a href="#git修改远程仓库地址" class="headerlink" title="git修改远程仓库地址"></a>git修改远程仓库地址</h3><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin &lt;url&gt;</span><br><span class="line">git remote <span class="built_in">rm</span> origin</span><br><span class="line">git remote add origin [url]</span><br></pre></td></tr></table></figure>
+<h5 id="方法2-先删后加"><a href="#方法2-先删后加" class="headerlink" title="方法2(先删后加)"></a>方法2(先删后加)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">rm</span> origin <span class="comment">#删除远程仓库地址</span></span><br><span class="line">git remote add origin [url] <span class="comment">#添加远程仓库地址</span></span><br></pre></td></tr></table></figure>
+<h5 id="方法3-直接修改配置文件"><a href="#方法3-直接修改配置文件" class="headerlink" title="方法3(直接修改配置文件)"></a>方法3(直接修改配置文件)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入git的根目录，编辑config文件，将文件中的内容修改成自己的</span></span><br><span class="line">[core]</span><br><span class="line">repositoryformatversion = 0 </span><br><span class="line">filemode = <span class="literal">false</span></span><br><span class="line">bare = <span class="literal">false</span></span><br><span class="line">logallrefupdates = <span class="literal">true</span></span><br><span class="line">symlinks = <span class="literal">false</span></span><br><span class="line">ignorecase = <span class="literal">true</span></span><br><span class="line">hideDotFiles = dotGitOnly</span><br><span class="line">[remote <span class="string">&quot;origin&quot;</span>] </span><br><span class="line">url = https://github.com/ZhangDi-d/SpringBootSample.git</span><br><span class="line">fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
+
+<h5 id="如何在远程仓库建立文件夹"><a href="#如何在远程仓库建立文件夹" class="headerlink" title="如何在远程仓库建立文件夹"></a>如何在远程仓库建立文件夹</h5><p>进入仓库，点击add new file,输入自定义文件夹名称并添加一个斜杠&#x2F;，然后在输入一个自定义文件名即可完成文件夹的建立。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/13/%E5%88%9D%E8%AF%86adb/" rel="prev" title="初识adb">
+      <i class="fa fa-chevron-left"></i> 初识adb
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/16/js%E6%93%8D%E6%8E%A7%E7%BD%91%E9%A1%B5/" rel="next" title="js操控网页">
+      js操控网页 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BDgit%E5%90%8E%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%94%A8%E6%9D%A5%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%BAgit%E5%8F%AF%E7%AE%A1%E7%90%86%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">安装好git后创建一个目录用来初始化为git可管理的仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.0.1.</span> <span class="nav-text">git初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.0.2.</span> <span class="nav-text">创建本地分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-push%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3"><span class="nav-number">1.1.</span> <span class="nav-text">git push报错解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">1.2.</span> <span class="nav-text">git删除分支</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">git查看分支</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="nav-number">1.3.</span> <span class="nav-text">git修改远程仓库地址</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%951"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%952-%E5%85%88%E5%88%A0%E5%90%8E%E5%8A%A0"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">方法2(先删后加)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%953-%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">方法3(直接修改配置文件)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">如何在远程仓库建立文件夹</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夜闹</p>
+  <div class="site-description" itemprop="description">记录是成熟与成长的过程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夜闹</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hexgio.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="adb shell下载链接：https:&#x2F;&#x2F;wws.lanzoui.com&#x2F;iNYNiq9l3yd打开文件所在文件夹，将地址栏清空并键入cmd，然后回车，在cmd窗口键入adb shell测试use调试是否连接成功，如果出现美元符号表示连接成功。adb shell am monitor                       #执行该命令后在手机上打开要卸载的应用，获取包名adb shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识adb">
+<meta property="og:url" content="http://hexgio.github.io/2022/06/13/%E5%88%9D%E8%AF%86adb/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="adb shell下载链接：https:&#x2F;&#x2F;wws.lanzoui.com&#x2F;iNYNiq9l3yd打开文件所在文件夹，将地址栏清空并键入cmd，然后回车，在cmd窗口键入adb shell测试use调试是否连接成功，如果出现美元符号表示连接成功。adb shell am monitor                       #执行该命令后在手机上打开要卸载的应用，获取包名adb shell">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-12T16:14:46.000Z">
+<meta property="article:modified_time" content="2022-06-12T16:29:36.649Z">
+<meta property="article:author" content="夜闹">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hexgio.github.io/2022/06/13/%E5%88%9D%E8%AF%86adb/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>初识adb | 闹的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">闹的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/13/%E5%88%9D%E8%AF%86adb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          初识adb
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-13 00:14:46 / 修改时间：00:29:36" itemprop="dateCreated datePublished" datetime="2022-06-13T00:14:46+08:00">2022-06-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>adb shell下载链接：<a target="_blank" rel="noopener" href="https://wws.lanzoui.com/iNYNiq9l3yd">https://wws.lanzoui.com/iNYNiq9l3yd</a><br>打开文件所在文件夹，将地址栏清空并键入cmd，然后回车，在cmd窗口键入adb shell测试use调试是否连接成功，如果出现美元符号表示连接成功。<br>adb shell am monitor                       #执行该命令后在手机上打开要卸载的应用，获取包名<br>adb shell pm disable-user 包名           #停用应用<br>adb shell pm enable 包名                 #恢复应用<br>adb install -r apk文件路径               #安装应用，直接将文件拖入cmd窗口可直接实现插入路径<br>adb shell pm list packages               #显示包名列表<br>adb uninstall 包名                       #卸载应用</p>
+<p>adb命令</p>
+<p>有些手机需要解锁system分区（如小米）</p>
+<p>输入：adb root</p>
+<p>输入：adb disable-verity</p>
+<p>查看手机连接状态：adb device</p>
+<p>获得root权限：root</p>
+<p>设置超级用户模式 : su</p>
+<p>退出su : exit</p>
+<p>重启命令：adb reboot</p>
+<p>重启到Rec：adb reboot recovery</p>
+<p>重启到Fastboot：adb reboot bootloader</p>
+<p>推送ROM包：adb sideload &lt;Rom包&gt;</p>
+<p>把文件从手机中复制到电脑上 : adb pull &lt;手机路径&gt; &lt;电脑路径&gt;</p>
+<p>把文件从电脑复制到手机上 : adb push &lt;电脑路径&gt; &lt;手机路径&gt;</p>
+<p>重新挂载文件系统 : adb remount</p>
+<p>安装软件 : adb install apk文件名称.apk</p>
+<p>卸载apk软件 : adb uninstall apk包名.apk</p>
+<p>Fastboot命令：</p>
+<p>查看连接状态 ：fastboot devices</p>
+<p>重启 ：fastboot reboot</p>
+<p>重启到Fastboot ：fastboot reboot-bootloader</p>
+<p>除非你很了解该命令，否则以下命令请谨慎使用：</p>
+<p>解锁 ：fastboot flashing unlock或fastboot oem unlock</p>
+<p>上锁 ：fastboot flashing lock或fastboot oem lock</p>
+<p>清除分区数据 ：fastboot erase &lt;boot&#x2F;system&#x2F;data&#x2F;cache&#x2F;userdata&#x2F;recovery&gt;</p>
+<p>清除分区(四清) ：fastboot erase system -w</p>
+<p>格式化分区数据 ：fastboot format &lt;boot&#x2F;system&#x2F;data&#x2F;cache&#x2F;userdata&#x2F;recovery&gt;</p>
+<p>烧写分区 ：fastboot flash &lt; boot&#x2F;system &#x2F;recovery&#x2F;radio&#x2F;bootloader&#x2F; splash1&#x2F;&gt; &lt;*.img&gt;</p>
+<p>以下是常用命令，可供大家查阅：</p>
+<p>启动 adb server 命令：adb start-server<br>停止 adb server 命令：adb kill-server<br>查看 adb 版本：adb version<br>安装 APK命令：adb install [-lrtsdg] <path_to_apk><br>卸载应用命令：adb uninstall [-k] <packagename><br>清除应用数据与缓存：adb shell pm clear <packagename><br>查看正在运行的 Services命令：adb shell dumpsys activity services [<packagename>]<br>查看应用详细信息命令：adb shell dumpsys package <packagename><br>发送广播，命令格式：adb shell am broadcast [options] <INTENT><br>强制停止应用命令：adb shell am force-stop <packagename><br>文件管理复制设备里的文件到电脑：adb pull &lt;设备里的文件路径&gt; [电脑上的目录]<br>复制电脑里的文件到设备：adb push &lt;电脑上的文件路径&gt; &lt;设备里的目录&gt;<br>电池状况命令：adb shell dumpsys battery<br>adb help, 列出所有的选项说明及子命令</p>
+<p>已停用应用包名(个人某手机已停用应用)：<br>com.ivvi.browser 自带浏览器<br>com.android.fmradio FM电台<br>com.upgadata.ivvi 游戏电台<br>com.iflytek.inputmethod 讯飞输入法<br>com.yulong.freezeroom 应用冻结<br>com.icoolme.android.weather 最美天气<br>com.yulong.android.videoplayer 视频<br>com.redstone.ota.ui 系统更新<br>com.coolpad.music 音乐<br>com.android.stk sim卡应用<br>com.yulong.android.backup 备份与恢复</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/11/sdf/" rel="prev" title="sdf">
+      <i class="fa fa-chevron-left"></i> sdf
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/14/git/" rel="next" title="git">
+      git <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夜闹</p>
+  <div class="site-description" itemprop="description">记录是成熟与成长的过程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夜闹</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
