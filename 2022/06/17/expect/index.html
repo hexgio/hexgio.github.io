@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"hexgio.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="记录是成熟与成长的过程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="闹的博客">
-<meta property="og:url" content="http://hexgio.github.io/tags/sdf/index.html">
+  <meta name="description" content="1.用expect实现与shell交互，用ssh连接termxu实例： #!&#x2F;usr&#x2F;bin&#x2F;expect       #这一句为声明，声明的方式为# + ! + expect路径果不知道expectr的路径，可以执行which expect来查看set host “192.168.0.0”  #非本人ip，随便编的ip地址set password “123456”s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="expect">
+<meta property="og:url" content="http://hexgio.github.io/2022/06/17/expect/index.html">
 <meta property="og:site_name" content="闹的博客">
-<meta property="og:description" content="记录是成熟与成长的过程">
+<meta property="og:description" content="1.用expect实现与shell交互，用ssh连接termxu实例： #!&#x2F;usr&#x2F;bin&#x2F;expect       #这一句为声明，声明的方式为# + ! + expect路径果不知道expectr的路径，可以执行which expect来查看set host “192.168.0.0”  #非本人ip，随便编的ip地址set password “123456”s">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-17T15:37:29.000Z">
+<meta property="article:modified_time" content="2022-06-17T15:55:01.752Z">
 <meta property="article:author" content="夜闹">
+<meta property="article:tag" content="expect">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://hexgio.github.io/tags/sdf/">
+<link rel="canonical" href="http://hexgio.github.io/2022/06/17/expect/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: sdf | 闹的博客</title>
+  <title>expect | 闹的博客</title>
   
 
 
@@ -156,51 +159,88 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">sdf
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/17/expect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          expect
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-17 23:37:29 / 修改时间：23:55:01" itemprop="dateCreated datePublished" datetime="2022-06-17T23:37:29+08:00">2022-06-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p>1.用expect实现与shell交互，用ssh连接termxu实例：</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;expect       #这一句为声明，声明的方式为<code>#</code> + <code>!</code> + <code>expect路径</code>果不知道expectr的路径，可以执行<code>which expect</code>来查看<br>set host “192.168.0.0”  #非本人ip，随便编的ip地址<br>set password “123456”<br>spawn ssh -p 8022 $host<br>expect<br>{</p>
+<p>“<em>yes&#x2F;no</em>\r”    #如果检测到包含部分字符串，输出内容与shell交互<br> {<br>   send “yes\r”<br>  }</p>
+<p>“*assword:”<br> {<br>   send “$password\r”<br>  }</p>
+<p>}<br>interact       #连接后保持连接状态</p>
+<p>2.用expect登录termux并执行脚本实例：</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;expect<br>set host “192.168.0.0”<br>set password “..Qq1ssh..”<br>set script “touch 54545455454545454544545545445455545454454454.sh” #假设脚本内容只是创建一个文件<br>spawn ssh -p 8022 $host<br>expect {<br>“<em>yes&#x2F;no</em>\r”<br> {<br>   send “yes\r”<br>  }<br>“<em>assword:”<br> {<br>   send “$password\r”<br>  }<br>}<br>expect “</em>“              #匹配到任意字符<br>send “$script\r”        #执行脚本<br>expect “*”              #匹配到任意内容<br>send “exit\r”           #退出<br>send “\r”               #换行<br>expect eof              #执行完后退出</p>
+<p>3.<code>expect eof</code>与<code>interact</code>的区别：<br>这两个命令作为结束语句用的，如果只是执行一次任务就退出，那么可以用<code>expect eof</code>，如果连接后想要保持连接状态，那么就用<code>interact</code></p>
+<p>4.注意事项：<br>有一点需要注意，执行脚本的方式有很多种，但是执行expect脚本的时候只能用<code>./</code>的方式执行，不然会执行失败</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-06-11T06:04:37+08:00"
-              content="2022-06-11">
-          06-11
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/expect/" rel="tag"># expect</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/06/11/sdf/" itemprop="url">
-            <span itemprop="name">sdf</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/16/js%E6%93%8D%E6%8E%A7%E7%BD%91%E9%A1%B5/" rel="prev" title="js操控网页">
+      <i class="fa fa-chevron-left"></i> js操控网页
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 

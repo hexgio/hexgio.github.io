@@ -162,6 +162,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/17/expect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/17/expect/" class="post-title-link" itemprop="url">expect</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-17 23:37:29 / 修改时间：23:55:01" itemprop="dateCreated datePublished" datetime="2022-06-17T23:37:29+08:00">2022-06-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.用expect实现与shell交互，用ssh连接termxu实例：</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;expect       #这一句为声明，声明的方式为<code>#</code> + <code>!</code> + <code>expect路径</code>果不知道expectr的路径，可以执行<code>which expect</code>来查看<br>set host “192.168.0.0”  #非本人ip，随便编的ip地址<br>set password “123456”<br>spawn ssh -p 8022 $host<br>expect<br>{</p>
+<p>“<em>yes&#x2F;no</em>\r”    #如果检测到包含部分字符串，输出内容与shell交互<br> {<br>   send “yes\r”<br>  }</p>
+<p>“*assword:”<br> {<br>   send “$password\r”<br>  }</p>
+<p>}<br>interact       #连接后保持连接状态</p>
+<p>2.用expect登录termux并执行脚本实例：</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;expect<br>set host “192.168.0.0”<br>set password “..Qq1ssh..”<br>set script “touch 54545455454545454544545545445455545454454454.sh” #假设脚本内容只是创建一个文件<br>spawn ssh -p 8022 $host<br>expect {<br>“<em>yes&#x2F;no</em>\r”<br> {<br>   send “yes\r”<br>  }<br>“<em>assword:”<br> {<br>   send “$password\r”<br>  }<br>}<br>expect “</em>“              #匹配到任意字符<br>send “$script\r”        #执行脚本<br>expect “*”              #匹配到任意内容<br>send “exit\r”           #退出<br>send “\r”               #换行<br>expect eof              #执行完后退出</p>
+<p>3.<code>expect eof</code>与<code>interact</code>的区别：<br>这两个命令作为结束语句用的，如果只是执行一次任务就退出，那么可以用<code>expect eof</code>，如果连接后想要保持连接状态，那么就用<code>interact</code></p>
+<p>4.注意事项：<br>有一点需要注意，执行脚本的方式有很多种，但是执行expect脚本的时候只能用<code>./</code>的方式执行，不然会执行失败</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/16/js%E6%93%8D%E6%8E%A7%E7%BD%91%E9%A1%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -423,7 +490,7 @@
           <p>Welcome to the SDF.ORG and Remote Learning Lab!</p>
 <p>Your class instructor or SDF.ORG has set up the following:<br>SDF Username:<br>SDF Password:  </p>
 <p>Please login to your account via the following methods:</p>
-<p> Linux or UNIX use:  ssh <a href="mailto:&#112;&#x61;&#115;&#115;&#x77;&#100;&#64;&#116;&#116;&#121;&#46;&#115;&#x64;&#102;&#x2e;&#x6f;&#x72;&#x67;">&#112;&#x61;&#115;&#115;&#x77;&#100;&#64;&#116;&#116;&#121;&#46;&#115;&#x64;&#102;&#x2e;&#x6f;&#x72;&#x67;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
+<p> Linux or UNIX use:  ssh <a href="mailto:&#112;&#x61;&#115;&#115;&#x77;&#100;&#x40;&#116;&#116;&#x79;&#46;&#x73;&#x64;&#102;&#x2e;&#111;&#114;&#x67;">&#112;&#x61;&#115;&#115;&#x77;&#100;&#x40;&#116;&#116;&#x79;&#46;&#x73;&#x64;&#102;&#x2e;&#111;&#114;&#x67;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
 <p>Need help NOW? Check out irc.sdf.org #helpdesk<br>               Join our QQ Chat Group: 513706123<br>and the SDF Member Contributed Tutorials at <a target="_blank" rel="noopener" href="https://sdf.org/?tutorials">https://sdf.org/?tutorials</a></p>
 <p>We also host social Mastodon, PixelFed, Peertube, Matrix and GIT instances:<br>You can join at<br><a target="_blank" rel="noopener" href="https://mastodon.sdf.org/">https://mastodon.sdf.org</a><br><a target="_blank" rel="noopener" href="https://pixelfed.sdf.org/">https://pixelfed.sdf.org</a><br><a target="_blank" rel="noopener" href="https://toobnix.org/">https://toobnix.org</a><br><a target="_blank" rel="noopener" href="https://matrix.sdf.org/">https://matrix.sdf.org</a><br><a target="_blank" rel="noopener" href="https://git.sdf.org/">https://git.sdf.org</a></p>
 <p>Are you a DJ or music lover? Check out our free RADIO service: <a target="_blank" rel="noopener" href="https://anonradio.net/">https://aNONradio.net</a></p>
@@ -891,161 +958,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/05/31/html-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="夜闹">
-      <meta itemprop="description" content="记录是成熟与成长的过程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闹的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/31/html-2/" class="post-title-link" itemprop="url">HTML给女友惊喜-2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-31 21:38:38" itemprop="dateCreated datePublished" datetime="2022-05-31T21:38:38+08:00">2022-05-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>跳动爱心</title>
-    <style>
-        *{
-     
-     
-            padding: 0;
-            margin: 0;
-        }
-        body{
-     
-     
-            background-color: pink;
-        }
-        #frame{
-     
-     
-            position: relative;
-            width: 400px;
-            height: 300px;
-            margin: 250px auto;
-        }
-        .left,.right{
-     
-     
-            top: 0;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-        }
-        .left{
-     
-     
-            left: 35px;
-
-        }
-        .right{
-     
-     
-            right: 35px;
-            z-index: -1;
-        }
-        .bottom{
-     
-     
-            bottom: 36px;
-            left: 100px;
-            width: 200px;
-            height: 200px;
-            transform: rotate(45deg);
-            z-index: -1;
-
-        }
-        .heart{
-     
-     
-            position: absolute;
-            box-shadow:0 0 40px #d5093c;
-            animation: beat .8s ease infinite normal;
-            background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
-        }
-        @keyframes beat {
-     
-     
-            0%{
-     
-     
-                transform: scale(1) rotate(225deg);
-                box-shadow:0 0 40px #d5093c;
-            }
-            50%{
-     
-     
-                transform: scale(1.1) rotate(225deg);
-                box-shadow: 0 0 70px #d5093c;
-            }
-            100%{
-     
-     
-                transform: scale(1) rotate(225deg);
-                box-shadow: 0 0 40px #d5093c;;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div id="frame">
-        <div class="heart left"></div>
-        <div class="heart right"></div>
-        <div class="heart bottom"></div>
-    </div>
-</body>
-</html>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1115,12 +1027,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
