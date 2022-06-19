@@ -185,10 +185,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-06-17 23:37:29 / 修改时间：23:55:01" itemprop="dateCreated datePublished" datetime="2022-06-17T23:37:29+08:00">2022-06-17</time>
+              <time title="创建时间：2022-06-17 23:37:29" itemprop="dateCreated datePublished" datetime="2022-06-17T23:37:29+08:00">2022-06-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-20 06:23:52" itemprop="dateModified" datetime="2022-06-20T06:23:52+08:00">2022-06-20</time>
+              </span>
 
           
 
@@ -209,7 +215,7 @@
 <p>2.用expect登录termux并执行脚本实例：</p>
 <p>#!&#x2F;usr&#x2F;bin&#x2F;expect<br>set host “192.168.0.0”<br>set password “..Qq1ssh..”<br>set script “touch 54545455454545454544545545445455545454454454.sh” #假设脚本内容只是创建一个文件<br>spawn ssh -p 8022 $host<br>expect {<br>“<em>yes&#x2F;no</em>\r”<br> {<br>   send “yes\r”<br>  }<br>“<em>assword:”<br> {<br>   send “$password\r”<br>  }<br>}<br>expect “</em>“              #匹配到任意字符<br>send “$script\r”        #执行脚本<br>expect “*”              #匹配到任意内容<br>send “exit\r”           #退出<br>send “\r”               #换行<br>expect eof              #执行完后退出</p>
 <p>3.<code>expect eof</code>与<code>interact</code>的区别：<br>这两个命令作为结束语句用的，如果只是执行一次任务就退出，那么可以用<code>expect eof</code>，如果连接后想要保持连接状态，那么就用<code>interact</code></p>
-<p>4.注意事项：<br>有一点需要注意，执行脚本的方式有很多种，但是执行expect脚本的时候只能用<code>./</code>的方式执行，不然会执行失败</p>
+<p>4.注意事项：<br>有一点需要注意，执行脚本的方式有很多种，但是执行expect脚本的时候只能用<code>expect</code> <code>./</code>的方式执行，目前我知道的两种方式，不然会执行失败。</p>
 
       
     </div>
@@ -490,7 +496,7 @@
           <p>Welcome to the SDF.ORG and Remote Learning Lab!</p>
 <p>Your class instructor or SDF.ORG has set up the following:<br>SDF Username:<br>SDF Password:  </p>
 <p>Please login to your account via the following methods:</p>
-<p> Linux or UNIX use:  ssh <a href="mailto:&#x70;&#x61;&#115;&#115;&#x77;&#x64;&#64;&#116;&#116;&#x79;&#x2e;&#115;&#100;&#102;&#x2e;&#111;&#114;&#103;">&#x70;&#x61;&#115;&#115;&#x77;&#x64;&#64;&#116;&#116;&#x79;&#x2e;&#115;&#100;&#102;&#x2e;&#111;&#114;&#103;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
+<p> Linux or UNIX use:  ssh <a href="mailto:&#x70;&#97;&#x73;&#115;&#x77;&#x64;&#64;&#x74;&#x74;&#121;&#x2e;&#x73;&#100;&#102;&#46;&#111;&#x72;&#x67;">&#x70;&#97;&#x73;&#115;&#x77;&#x64;&#64;&#x74;&#x74;&#121;&#x2e;&#x73;&#100;&#102;&#46;&#111;&#x72;&#x67;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
 <p>Need help NOW? Check out irc.sdf.org #helpdesk<br>               Join our QQ Chat Group: 513706123<br>and the SDF Member Contributed Tutorials at <a target="_blank" rel="noopener" href="https://sdf.org/?tutorials">https://sdf.org/?tutorials</a></p>
 <p>We also host social Mastodon, PixelFed, Peertube, Matrix and GIT instances:<br>You can join at<br><a target="_blank" rel="noopener" href="https://mastodon.sdf.org/">https://mastodon.sdf.org</a><br><a target="_blank" rel="noopener" href="https://pixelfed.sdf.org/">https://pixelfed.sdf.org</a><br><a target="_blank" rel="noopener" href="https://toobnix.org/">https://toobnix.org</a><br><a target="_blank" rel="noopener" href="https://matrix.sdf.org/">https://matrix.sdf.org</a><br><a target="_blank" rel="noopener" href="https://git.sdf.org/">https://git.sdf.org</a></p>
 <p>Are you a DJ or music lover? Check out our free RADIO service: <a target="_blank" rel="noopener" href="https://anonradio.net/">https://aNONradio.net</a></p>
