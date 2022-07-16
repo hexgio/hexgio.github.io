@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hexgio.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="看linux相关书籍，三天打鱼，两天晒网系列dmesg #查看系统启动日志dmesg | dmes #使用more分屏显示，这样显示一屏幕后会暂停，看完后点击空格继续看下一页 vi #编辑器的使用 a #在当前光标后面添加文本A #在当前光标所在行的行尾添加文本i:在当前的光标前面添加文本I #在当前光标所在行的行首添加文本o #在当前光标所在行的下方添加一行，并且在新加行的行首添加文本 vi的命">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux网络操作系统项目教程">
+<meta property="og:url" content="http://hexgio.github.io/2022/06/28/linux%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="看linux相关书籍，三天打鱼，两天晒网系列dmesg #查看系统启动日志dmesg | dmes #使用more分屏显示，这样显示一屏幕后会暂停，看完后点击空格继续看下一页 vi #编辑器的使用 a #在当前光标后面添加文本A #在当前光标所在行的行尾添加文本i:在当前的光标前面添加文本I #在当前光标所在行的行首添加文本o #在当前光标所在行的下方添加一行，并且在新加行的行首添加文本 vi的命">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-28T14:40:37.482Z">
+<meta property="article:modified_time" content="2022-06-28T14:40:37.482Z">
+<meta property="article:author" content="夜闹">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hexgio.github.io/2022/06/28/linux%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>linux网络操作系统项目教程 | 闹的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">闹的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/28/linux%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux网络操作系统项目教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-28 22:40:37" itemprop="dateCreated datePublished" datetime="2022-06-28T22:40:37+08:00">2022-06-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h6 id="看linux相关书籍，三天打鱼，两天晒网系列"><a href="#看linux相关书籍，三天打鱼，两天晒网系列" class="headerlink" title="看linux相关书籍，三天打鱼，两天晒网系列"></a>看linux相关书籍，三天打鱼，两天晒网系列</h6><p><code>dmesg</code> #查看系统启动日志<br><code>dmesg | dmes</code> #使用more分屏显示，这样显示一屏幕后会暂停，看完后点击空格继续看下一页</p>
+<p>vi #编辑器的使用</p>
+<p><code>a</code> #在当前光标后面添加文本<br><code>A</code> #在当前光标所在行的行尾添加文本<br>i:在当前的光标前面添加文本<br><code>I</code> #在当前光标所在行的行首添加文本<br><code>o</code> #在当前光标所在行的下方添加一行，并且在新加行的行首添加文本</p>
+<p>vi的命令模式(末行模式):输入<code>:</code> <code>/</code> <code>?</code>三个中的任何一个，就可以将光标移动到屏幕最底下那一行，通常称为末行模式，在末行模式中，可以提供搜索、选取文件、存盘、查找替换、离开vi、显示行号待功能。</p>
+<p>vi的删除功能</p>
+<p><code>x</code> #删除当前光标所在的字符<br><code>dw</code> #删除光标所在单词字符至下一个单词开始的几个字符<br><code>d$或shift+d</code> #删除从当前光标至行尾的所有字符<br><code>dd</code> #删除光标所在的行<br><code>u和u</code> #撤销<br><code>wq:</code> #保存并退出<br><code>q!</code> #强制退出<br>vi复制与粘贴功能<br><code>yw</code> #将光标所在之处到字尾的字符复制到缓冲区中<br><code>yy</code> #复制光标所在行到缓冲区<br><code>#yy</code> #例如，６yy表示拷贝从光标所在的该行“往下数”６行文字<br><code>p</code> #将缓冲区中的字符贴到光标所在位置。注意所有与“y”有关的复制命令都必须与“p“配合才能完成复制与粘贴功能</p>
+<p>vi的查找与替换功能</p>
+<p><code>?</code> #从当前光标位置开始反向查找字符串<br><code>/</code> #从当前光标位置开始向前查找字符串<br><code>n</code> #继续上一次查找<br><code>shift+n</code>或<code>N</code> #以相反的方向继续上一次查找</p>
+<p>vi的查找与替换功能：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">:[替换范围]s/要替换的内容/替换成的内容/[c,e,g,i]</span><br><span class="line">c：替换前会进行询问</span><br><span class="line">e：不显示错误</span><br><span class="line">g：不询问，整行替换</span><br><span class="line">i：不分大小写</span><br><span class="line">例如：</span><br><span class="line">:s/testword/sky1</span><br><span class="line">替换当前行第一个testowrd为sky1</span><br><span class="line">:1,$s/testword/sky2</span><br><span class="line">替换整篇文章第一个testword为sky2</span><br><span class="line">:%s/testword/sky3</span><br><span class="line">替换整篇文章所有testword为sky3</span><br></pre></td></tr></table></figure>
+
+<p>环境设置——环境设置命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:set ai 或 :set autoindent #自动缩进，每一行开头都与上一行的开头对齐</span><br><span class="line">:set nu 或 :set number #在编辑时显示行号</span><br><span class="line">:ser dir=./ #将交的文件.swp保存在当前目录</span><br><span class="line">:set sw=4 或 :set shiftwidth=4 #设置缩进的字符数为4</span><br><span class="line">:syntax on #开启语法着色</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件系统管理"><a href="#文件系统管理" class="headerlink" title="文件系统管理"></a>文件系统管理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls #查看目录</span><br><span class="line">df #查看各分区的使用情况</span><br><span class="line">fdisk -l #查看磁盘的分区情况，一般电脑上的硬盘标识为sda,外部硬盘标识为sdb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用mount命令挂载设备分区——使用方法：<br><code>mount [-t vfstype] [=o options] device dir</code><br>(1) -t vfstype #指定系统文件的类型。通常不必指定，mount会自动选择正确的类型。常用文件类型如下所示。<br>光盘或系统镜像：iso9660<br>DOS FAT 16文件系统：msdos<br>Windows 9x FAT 32 文件系统：vfat<br>windows NT NTFS 文件系统：ntfs<br>windows 文件共享：smbfs<br>Uinx(Linux)文件共享：nfs<br>(2) -o options #主要用来描述设备或文件的挂接方式。常用参数如下所示。<br>loop #用来把一个文件当成硬盘分区挂接上系统<br>ro #采用只读方式挂接设备<br>rw #采用读写方式挂接设备<br>iocharset #指定访问文件系统所采用字符集<br>(3) device #要挂载(mount)的设备<br>(4) dir #设备在系统上的挂载目录(mount point)</p>
+<p>挂载光盘——示例：<br>要挂载光盘，首先需要使用<code>mkdir</code>命令来创建要挂载的目录，然后使用<code>mount</code>命令进行挂载，光盘的黑鹰设备名称是iso9660。如果要挂载的是光盘的镜像文件，需要添加<code>-o loop</code>参数</p>
+<p>mkdir &#x2F;mnt&#x2F;cdrom1 #创建光盘的挂载目录<br>mount -t iso9660 &#x2F;dev&#x2F;cdrom &#x2F;mnt&#x2F;cdrom1 #挂载光盘到&#x2F;mnt&#x2F;cdrom1，&#x2F;dev&#x2F;cdrom是光盘驱动器的设备文件<br>ls &#x2F;mnt&#x2F;cdrom1 #sj查看光盘下的内容<br>mkdir &#x2F;mnt&#x2F;cdrom2 #创建光盘镜像的挂载目录<br>mount -0 loop -t iso9660 &#x2F;pathtofile&#x2F;you.iso &#x2F;mnt&#x2F;cdrom2 #挂载光盘镜像.iso文件，要加上” -o loop “进行挂载<br>ls &#x2F;mnt&#x2F;cdrom2 #查看光盘镜像下的内容<br>挂载U盘或者移动硬盘</p>
+<p>注意：<br>插入U盘前后要分别用命令fdisk -l<code>查看系统硬盘和硬盘分区情况。一般插入的硬盘的标识为</code>sdb<code>即为我们要挂载的硬盘或U盘， 创建挂载目录并进行挂载，挂载文件系统文件类型为vfat。如果要显示中文信息，增加参数</code>-o iocharset&#x3D;cp936&#96;设定字符集是简体中文<br>例：挂载U盘或者移动硬盘：</p>
+<p>mkdir -p &#x2F;mnt&#x2F;usb1 #创建挂载目录，-参数的作用是，如果目标目录的上级目录不存在，就一并创建<br>mount -t vfat &#x2F;dev&#x2F;sdb1 &#x2F;mnt&#x2F;usb1 #挂载U盘，文件系统是 vfat(W95 FAT32),&#x2F;dev&#x2F;sdb1是命令 fdisk -l 查到的设备名<br>ls &#x2F;mnt&#x2F;usb1 #查看光盘上的信息</p>
+<p>使用<code>umount</code>卸载设备</p>
+<p>ls &#x2F;mnt&#x2F;usb1 #查看已挂载设备上信息<br>umount &#x2F;dev&#x2F;sdb1 #使用已挂载设备名进行卸载<br>umount &#x2F;mnt&#x2F;usb1 #使用已挂载设备的挂载位置进行卸载，二者选一种<br>ls &#x2F;mnt&#x2F;usb1 #再次查看挂载位置，应该是空目录了</p>
+<p>文件类型：<br>linux下的文件类型有普通文件、目录文件、链接文件和特殊文件4种，可以通过<code>ls -l</code> <code>file</code> <code>stat</code>几个命令来查看文件的类型等相关信息。<br>另外，如下所示，<code>-</code>是文件的类别属性，表示一个普通文件，如果是d表示目录，如果是l表示链接文件。接下来前三位是属主权限设置，中间三位是同组人员权限，最后三位是其他用户的权限，r表示权限，w表示写权限，x表示执行权限。</p>
+<p>-rwxrwxrwx<br>drwxrwxrwx<br>lrwxrwxrwx</p>
+<p>chmod修改文件权限——两种方式：<br>包含字母和操作符表达式的文字设定法<br>包含数字的数字设定法。<br><code>chmod [用户类别ugoa] [+ | - | =] [权限rwx等] 文件名</code><br>用户类别可以是下表中字母的任一个或者它们的组合。</p>
+<p>u #表示“用户(user)”，即文件或目录的所有者<br>g #表示“同组(group)用户”，即与文件属主有相同组ID的所有用户<br>o #表示“其他(others)用户”<br>a #表示“所有(all)用户”。它是系统默认值</p>
+<pre><code>
+文件权限设置的相关指令：
+
+ls -l #使用长列表方式显示目录下的文件和子目录
+touch #创建新文件，更新文件状态属性
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/28/html-2/" rel="prev" title="HTML给女友惊喜-2">
+      <i class="fa fa-chevron-left"></i> HTML给女友惊喜-2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/28/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/" rel="next" title="如何申请免费域名">
+      如何申请免费域名 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9C%8Blinux%E7%9B%B8%E5%85%B3%E4%B9%A6%E7%B1%8D%EF%BC%8C%E4%B8%89%E5%A4%A9%E6%89%93%E9%B1%BC%EF%BC%8C%E4%B8%A4%E5%A4%A9%E6%99%92%E7%BD%91%E7%B3%BB%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">看linux相关书籍，三天打鱼，两天晒网系列</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="nav-number"></span> <span class="nav-text">文件系统管理</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夜闹</p>
+  <div class="site-description" itemprop="description">记录是成熟与成长的过程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夜闹</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -120,16 +120,6 @@
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -162,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/05/20/stm32_day01/">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/16/js%E6%93%8D%E6%8E%A7%E7%BD%91%E9%A1%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,7 +166,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/20/stm32_day01/" class="post-title-link" itemprop="url">stm32入门-1</a>
+            <a href="/2022/06/16/js%E6%93%8D%E6%8E%A7%E7%BD%91%E9%A1%B5/" class="post-title-link" itemprop="url">js操控网页</a>
         </h2>
 
         <div class="post-meta">
@@ -186,167 +176,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-05-20 00:11:20" itemprop="dateCreated datePublished" datetime="2022-05-20T00:11:20+08:00">2022-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h6 id="此页内容为刘阳老师所著，我以博客的形式记录一下。"><a href="#此页内容为刘阳老师所著，我以博客的形式记录一下。" class="headerlink" title="此页内容为刘阳老师所著，我以博客的形式记录一下。"></a>此页内容为刘阳老师所著，我以博客的形式记录一下。</h6><h6 id="链接-https-pan-baidu-com-s-16H5Fy8JCkOP3l68kZ-qtJw-pwd-4snd-提取码-4snd"><a href="#链接-https-pan-baidu-com-s-16H5Fy8JCkOP3l68kZ-qtJw-pwd-4snd-提取码-4snd" class="headerlink" title="链接: https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd 提取码: 4snd"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd">https://pan.baidu.com/s/16H5Fy8JCkOP3l68kZ_qtJw?pwd=4snd</a> 提取码: 4snd</h6><h6 id="链接-https-pan-baidu-com-s-1uMh5hj63cPU4DhzMIZG0vA-pwd-b4a1-提取码-b4a1"><a href="#链接-https-pan-baidu-com-s-1uMh5hj63cPU4DhzMIZG0vA-pwd-b4a1-提取码-b4a1" class="headerlink" title="链接: https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1 提取码: b4a1"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1">https://pan.baidu.com/s/1uMh5hj63cPU4DhzMIZG0vA?pwd=b4a1</a> 提取码: b4a1</h6><ol>
-<li><p>介绍<br> 刘阳 </p>
-<p> 上课时间： 上午：8点上线 –》 9点50   10点10 —》 11点30<br>   下午： 宿舍做实验 下午5点之前做完实验 技术关键点 –》 文字+图片的形式记录<br> 基础软件  裸板 不跑操作系统<br> 应用软件<br> 系统软件  BIOS GRUB Kernel(内核)<br> 中断   UEFI  Event<br>  练武：<br> 内练一口气，外练筋骨皮！–》 铁头功 金刚腿 金钟罩 铁布衫			<br> 产品  4  内功深厚  时间周期长 调研 写文档（接口）  codeing 期限  测试 修改bug 测试  稳定 （不会死机，长稳定运行，可靠）总结<br> 项目<br> 99%的同学  –》 linux </p>
-<p> 车： 离合  油门  刹车 –》 驱动车<br> 操作系统： PC —》 接口  C （printf fopen …）C库函数 —》 系统调用Systemcall (open) —&gt; kernel (sys_open) fs  —&gt; （硬盘）USB 博大精深 3.0（丢盘）<br> Linux 高级环境编程 –》 多进程&#x2F;多线程 </p>
-<p> C   &#x2F;   C++<br> unix  操作系统  99.9%代码C写的  + 0.1%汇编<br> linux 操作系统  99.9%代码C写的  + 0.1%汇编<br> windows操作系统  75~80%的代码C写的 + 汇编</p>
-<ol>
-<li>C的执行效率高（黑话）</li>
-<li>C语言可以实现其他语言所实现的所有功能</li>
-</ol>
-<p> C语言 面向过程   变量   数组  指针  结构体<br> C语言程序设计 （第三版）</p>
-<p> int var &#x3D; 300; &#x2F;&#x2F;变量的定义     int var;<br>             var &#x3D; 300; &#x2F;&#x2F;变量的赋值<br> int var;&#x2F;&#x2F;变量的声明<br> 变量的声明和变量的定义的区别：<br> 变量的声明式作用域的扩充，变量的声明并不分配空间。<br> 变量的定义是要为变量分配空间的！</p>
-<p> C++   面向对象  万物皆对象 </p>
-<p> 智能云设备  基于物联网技术<br> 刘阳 专业 班级  </p>
-<p> 考核：	</p>
-<ol>
-<li>产品的宣发 PPT + Code + 宣讲 结课之前两天，前一天半  —》 50%</li>
-<li>线上提问20% —》 组的方式 —》 20%</li>
-<li>小考试 30%  —》 10道题 —》 30% –》 班长统计</li>
-</ol>
-</li>
-<li><p>C语言的基本功</p>
-<ol>
-<li><p>编写头文件<br> .c   #include &lt;stdio.h&gt;	<br> 头文件中说明接口.<br> #ifndef 宏    头文件卫士<br> #define 宏<br> 函数的声明<br> 类型的定义<br> 文件的包含<br> 宏定义<br> 变量的声明<br> #endif </p>
-</li>
-<li><p>数据类型<br> void int char short float double…<br> 其实在计算机里是没有数据类型的，说白了，就是访问内存的规则和这种规则的相关操作。<br> 访问内存，你要遵循的方式。<br> 注意: void 类型和无类型是两种概念，无类型只关注地址。<br> 指针类型 指针并不能简单说是地址，它是一种类型！<br> int var &#x3D; 300;<br> int *p &#x3D; &amp;var;</p>
-</li>
-</ol>
-<p> 数组  函数  结构体  —&gt;都是一种数据类型<br> int func_t (int x,int y);<br> typedef int func_t (int, int);</p>
-<p> struct node{<br>     int data;<br>     struct node next;&#x2F;&#x2F;不行的，不确定结构体的大小<br>     struct node *next;&#x2F;&#x2F;可以的，结构体的大小确定<br> };</p>
-</li>
-<li><p>搭建开发环境:<br> windows 环境</p>
-<ol>
-<li>安装Keil (记得打补丁)</li>
-<li>安装驱动</li>
-<li>测试开发环境是否正常 –》 rebuild</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="夜闹">
-      <meta itemprop="description" content="记录是成熟与成长的过程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闹的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/19/hosts%E5%8E%9F%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">如何编辑hosts</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-19 23:57:11" itemprop="dateCreated datePublished" datetime="2022-05-19T23:57:11+08:00">2022-05-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="hosts原文件内容"><a href="#hosts原文件内容" class="headerlink" title="hosts原文件内容"></a>hosts原文件内容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">　<span class="comment"># Copyright (c) 1993-2009 Microsoft Corp.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># This file contains the mappings of IP addresses to host names. Each</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># entry should be kept on an individual line. The IP address should</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># be placed in the first column followed by the corresponding host name.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># The IP address and the host name should be separated by at least one</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># space.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># Additionally, comments (such as these) may be inserted on individual</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># lines or following the machine name denoted by a &#x27;#&#x27; symbol.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># For example:</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment">#</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 102.54.94.97 rhino.acme.com # source server</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 38.25.63.10 x.acme.com # x client host</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># localhost name resolution is handled within DNS itself.</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># 127.0.0.1 localhost</span></span><br><span class="line"></span><br><span class="line">　　<span class="comment"># ::1 localhost</span></span><br></pre></td></tr></table></figure>
-<h2 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/05/13/gitstudy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="夜闹">
-      <meta itemprop="description" content="记录是成熟与成长的过程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闹的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/13/gitstudy/" class="post-title-link" itemprop="url">git教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-13 00:08:30" itemprop="dateCreated datePublished" datetime="2022-05-13T00:08:30+08:00">2022-05-13</time>
+              <time title="创建时间：2022-06-16 16:46:26" itemprop="dateCreated datePublished" datetime="2022-06-16T16:46:26+08:00">2022-06-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-06 21:18:22" itemprop="dateModified" datetime="2022-05-06T21:18:22+08:00">2022-05-06</time>
+                <time title="修改时间：2022-06-28 22:40:40" itemprop="dateModified" datetime="2022-06-28T22:40:40+08:00">2022-06-28</time>
               </span>
 
           
@@ -360,7 +197,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的官方网站-git教程</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">菜鸟教程-git</a><br><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/git/">w3cschool-git教程</a><br><a target="_blank" rel="noopener" href="https://www.bootcss.com/p/git-guide/">git-简易指南</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Free_Wind22/article/details/50967723">csdn-git</a><br><a target="_blank" rel="noopener" href="https://gitee.com/progit/">gitee-git</a><br><a target="_blank" rel="noopener" href="https://blog.lufficc.com/the-corie-conception-of-git/#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F">git的核心概念</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/syp172654682/p/7689328.html8">博客园-git</a><br><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">git-scm教程</a><br><a target="_blank" rel="noopener" href="https://oschina.gitee.io/learn-git-branching/">gitee-git命令学习</a></p>
+          <p>控制视频倍速示例：document.querySelector(“video”).playbackRate&#x3D;’8’;<br>音视频自动播放示例：document.querySelector(“audio”).play();<br>音视频暂停示例：document.querySelector(“audio”).pause();<br>音视频调整进度示例：document.querySelector(“audio”).currentTime&#x3D;0;<br><a href="://blog.csdn.net/kaikai4/article/details/51776581">HTML5使用JavaScript控制＜audio&gt;音频的播放</a></p>
+<p>js控制台页面刷新：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qmdweb/article/details/80776494">Js控制页面刷新（局部刷新&amp;全页面刷新）</a></p>
 
       
     </div>
@@ -380,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/05/13/termux/">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/13/%E5%88%9D%E8%AF%86adb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -394,7 +232,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/05/13/termux/" class="post-title-link" itemprop="url">termux</a>
+            <a href="/2022/06/13/%E5%88%9D%E8%AF%86adb/" class="post-title-link" itemprop="url">初识adb</a>
         </h2>
 
         <div class="post-meta">
@@ -404,14 +242,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-05-13 00:08:30" itemprop="dateCreated datePublished" datetime="2022-05-13T00:08:30+08:00">2022-05-13</time>
+              <time title="创建时间：2022-06-13 00:14:46" itemprop="dateCreated datePublished" datetime="2022-06-13T00:14:46+08:00">2022-06-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-06 21:18:22" itemprop="dateModified" datetime="2022-05-06T21:18:22+08:00">2022-05-06</time>
+                <time title="修改时间：2022-06-28 22:40:41" itemprop="dateModified" datetime="2022-06-28T22:40:41+08:00">2022-06-28</time>
               </span>
 
           
@@ -425,9 +263,189 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="termux的下载安装及使用教程"><a href="#termux的下载安装及使用教程" class="headerlink" title="termux的下载安装及使用教程"></a>termux的下载安装及使用教程</h2><p><a target="_blank" rel="noopener" href="https://termux.com/">termux官网</a><br><a target="_blank" rel="noopener" href="https://www.sqlsec.com/2018/05/termux.html">termux教程</a></p>
-<h2 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage #给访问权限</span><br><span class="line">apt-update &amp;&amp; apt grade &amp;&amp; pkg update &amp;&amp; pkg grade #检查更新并升级</span><br><span class="line">pkg install vim #文本编辑工具</span><br></pre></td></tr></table></figure>
-<h2 id="其它工具的安装"><a href="#其它工具的安装" class="headerlink" title="其它工具的安装"></a>其它工具的安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkg install git #根据个人需要选择性安装</span><br><span class="line">pkg install nodejs-lts -g #用来安装各种插件，根据个人需要选择性安装</span><br><span class="line">npm install hexo-cli -g #必须先安装nodejs再执行，用来搭建博客，根据个人需要选择性安装</span><br><span class="line">pkg install proot-distro #可用来安装linux系统，根据个人需要选择性安装</span><br></pre></td></tr></table></figure>
+          <p>adb shell下载链接：<a target="_blank" rel="noopener" href="https://wws.lanzoui.com/iNYNiq9l3yd">https://wws.lanzoui.com/iNYNiq9l3yd</a><br>打开文件所在文件夹，将地址栏清空并键入cmd，然后回车，在cmd窗口键入adb shell测试use调试是否连接成功，如果出现美元符号表示连接成功。<br>adb shell am monitor                       #执行该命令后在手机上打开要卸载的应用，获取包名<br>adb shell pm disable-user 包名           #停用应用<br>adb shell pm enable 包名                 #恢复应用<br>adb install -r apk文件路径               #安装应用，直接将文件拖入cmd窗口可直接实现插入路径<br>adb shell pm list packages               #显示包名列表<br>adb uninstall 包名                       #卸载应用</p>
+<p>adb命令</p>
+<p>有些手机需要解锁system分区（如小米）</p>
+<p>输入：adb root</p>
+<p>输入：adb disable-verity</p>
+<p>查看手机连接状态：adb device</p>
+<p>获得root权限：root</p>
+<p>设置超级用户模式 : su</p>
+<p>退出su : exit</p>
+<p>重启命令：adb reboot</p>
+<p>重启到Rec：adb reboot recovery</p>
+<p>重启到Fastboot：adb reboot bootloader</p>
+<p>推送ROM包：adb sideload &lt;Rom包&gt;</p>
+<p>把文件从手机中复制到电脑上 : adb pull &lt;手机路径&gt; &lt;电脑路径&gt;</p>
+<p>把文件从电脑复制到手机上 : adb push &lt;电脑路径&gt; &lt;手机路径&gt;</p>
+<p>重新挂载文件系统 : adb remount</p>
+<p>安装软件 : adb install apk文件名称.apk</p>
+<p>卸载apk软件 : adb uninstall apk包名.apk</p>
+<p>Fastboot命令：</p>
+<p>查看连接状态 ：fastboot devices</p>
+<p>重启 ：fastboot reboot</p>
+<p>重启到Fastboot ：fastboot reboot-bootloader</p>
+<p>除非你很了解该命令，否则以下命令请谨慎使用：</p>
+<p>解锁 ：fastboot flashing unlock或fastboot oem unlock</p>
+<p>上锁 ：fastboot flashing lock或fastboot oem lock</p>
+<p>清除分区数据 ：fastboot erase &lt;boot&#x2F;system&#x2F;data&#x2F;cache&#x2F;userdata&#x2F;recovery&gt;</p>
+<p>清除分区(四清) ：fastboot erase system -w</p>
+<p>格式化分区数据 ：fastboot format &lt;boot&#x2F;system&#x2F;data&#x2F;cache&#x2F;userdata&#x2F;recovery&gt;</p>
+<p>烧写分区 ：fastboot flash &lt; boot&#x2F;system &#x2F;recovery&#x2F;radio&#x2F;bootloader&#x2F; splash1&#x2F;&gt; &lt;*.img&gt;</p>
+<p>以下是常用命令，可供大家查阅：</p>
+<p>启动 adb server 命令：adb start-server<br>停止 adb server 命令：adb kill-server<br>查看 adb 版本：adb version<br>安装 APK命令：adb install [-lrtsdg] <path_to_apk><br>卸载应用命令：adb uninstall [-k] <packagename><br>清除应用数据与缓存：adb shell pm clear <packagename><br>查看正在运行的 Services命令：adb shell dumpsys activity services [<packagename>]<br>查看应用详细信息命令：adb shell dumpsys package <packagename><br>发送广播，命令格式：adb shell am broadcast [options] <INTENT><br>强制停止应用命令：adb shell am force-stop <packagename><br>文件管理复制设备里的文件到电脑：adb pull &lt;设备里的文件路径&gt; [电脑上的目录]<br>复制电脑里的文件到设备：adb push &lt;电脑上的文件路径&gt; &lt;设备里的目录&gt;<br>电池状况命令：adb shell dumpsys battery<br>adb help, 列出所有的选项说明及子命令</p>
+<p>已停用应用包名(个人某手机已停用应用)：<br>com.ivvi.browser 自带浏览器<br>com.android.fmradio FM电台<br>com.upgadata.ivvi 游戏电台<br>com.iflytek.inputmethod 讯飞输入法<br>com.yulong.freezeroom 应用冻结<br>com.icoolme.android.weather 最美天气<br>com.yulong.android.videoplayer 视频<br>com.redstone.ota.ui 系统更新<br>com.coolpad.music 音乐<br>com.android.stk sim卡应用<br>com.yulong.android.backup 备份与恢复</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/11/sdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/11/sdf/" class="post-title-link" itemprop="url">sdf</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-11 06:04:37" itemprop="dateCreated datePublished" datetime="2022-06-11T06:04:37+08:00">2022-06-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-28 22:40:37" itemprop="dateModified" datetime="2022-06-28T22:40:37+08:00">2022-06-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to the SDF.ORG and Remote Learning Lab!</p>
+<p>Your class instructor or SDF.ORG has set up the following:<br>SDF Username:<br>SDF Password:  </p>
+<p>Please login to your account via the following methods:</p>
+<p> Linux or UNIX use:  ssh <a href="mailto:&#x70;&#x61;&#115;&#115;&#119;&#x64;&#x40;&#116;&#x74;&#121;&#x2e;&#x73;&#x64;&#102;&#46;&#x6f;&#x72;&#x67;">&#x70;&#x61;&#115;&#115;&#119;&#x64;&#x40;&#116;&#x74;&#121;&#x2e;&#x73;&#x64;&#102;&#46;&#x6f;&#x72;&#x67;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
+<p>Need help NOW? Check out irc.sdf.org #helpdesk<br>               Join our QQ Chat Group: 513706123<br>and the SDF Member Contributed Tutorials at <a target="_blank" rel="noopener" href="https://sdf.org/?tutorials">https://sdf.org/?tutorials</a></p>
+<p>We also host social Mastodon, PixelFed, Peertube, Matrix and GIT instances:<br>You can join at<br><a target="_blank" rel="noopener" href="https://mastodon.sdf.org/">https://mastodon.sdf.org</a><br><a target="_blank" rel="noopener" href="https://pixelfed.sdf.org/">https://pixelfed.sdf.org</a><br><a target="_blank" rel="noopener" href="https://toobnix.org/">https://toobnix.org</a><br><a target="_blank" rel="noopener" href="https://matrix.sdf.org/">https://matrix.sdf.org</a><br><a target="_blank" rel="noopener" href="https://git.sdf.org/">https://git.sdf.org</a></p>
+<p>Are you a DJ or music lover? Check out our free RADIO service: <a target="_blank" rel="noopener" href="https://anonradio.net/">https://aNONradio.net</a></p>
+<p>Are you an Amateur Radio Operator (HAM)? Check out <a target="_blank" rel="noopener" href="https://sdfarc.org/">https://sdfarc.org</a></p>
+<p>See you on SDF soon!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/06/09/Linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget%E4%B8%8B%E8%BD%BD%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/09/Linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget%E4%B8%8B%E8%BD%BD%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">Linux如何使用wget下载整个网站</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-09 20:41:16" itemprop="dateCreated datePublished" datetime="2022-06-09T20:41:16+08:00">2022-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-28 22:40:41" itemprop="dateModified" datetime="2022-06-28T22:40:41+08:00">2022-06-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="原谅链接"><a href="#原谅链接" class="headerlink" title="原谅链接"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/github_37483541/article/details/54955425">原谅链接</a></h5><p>Linux 如何使用 wget 下载整个网站<br>近期要去缅甸呆半个月，想顺便把 W3SCHOOL.COM 上面的 HTML&#x2F;CSS&#x2F;JS&#x2F;PHP 教程温习一遍。但是有一个问题，缅甸的网速很慢，我们住的酒店 wifi 不稳定，今年 1 月份和 6 月份我也在缅甸胶漂岛呆过，特别怀念我国的 4g 网络。所以，这次无论如何我要把 W3SCHOOL.COM 的内容离线下载下来。</p>
+<p>wget 是用于从网站下载资源的 linux 命令，基本用法是 wget url:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.w3schools.com/</span><br></pre></td></tr></table></figure>
+
+<p>一般来说，网站的页面会有很多链接，点击之后可以链接到其他页面，其他页面也可能有链接，就这样一级一级链接下去，如果要把这些所有关联的页面都下载下来，用法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -r http://www.w3schools.com/</span><br></pre></td></tr></table></figure>
+
+<p>但是大部分网站不允许你下载所有网站的内容，如果网站检测不到浏览器标识，会拒绝你的下载连接或者给你发送回一个空白网页。这个时候在 wget 后面加上 <code>user-agent</code> 就可以：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -r -p -U Mozilla http://www.w3schools.com/</span><br><span class="line">为了避免被网站加入黑名单，我们可以限制下载的速度以及两次下载之间的等待时间：</span><br><span class="line">wget --<span class="built_in">wait</span>=20 --limit-rate=20K -r -p -U Mozilla http://www.w3schools.com/</span><br></pre></td></tr></table></figure>
+
+<p>如何只是想下载特定文件夹下的网页，使用 <code>--no-parent</code> :</p>
+<p>&#x2F;&#x2F;只下载 <code>/js</code> 下的所有页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --<span class="built_in">wait</span>=20 --limit-rate=20K --no-parent -r -p -U Mozilla http://www.w3schools.com/js/default.asp</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -478,7 +496,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-06 21:18:22" itemprop="dateModified" datetime="2022-05-06T21:18:22+08:00">2022-05-06</time>
+                <time title="修改时间：2022-06-28 22:40:31" itemprop="dateModified" datetime="2022-06-28T22:40:31+08:00">2022-06-28</time>
               </span>
 
           
