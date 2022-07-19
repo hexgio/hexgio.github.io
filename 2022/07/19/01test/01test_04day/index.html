@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hexgio.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一.温故知新    变量    1.变量的含义    变量就是用来存储数据    2.变量的定义    数据类型	变量名	;    基本数据类型        整型		有符号&#x2F;无符号	short int long        实型		有符号		float double        字符型	有符号&#x2F;无符号	char    sizeof是一个运算符,不是函数        si">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test4">
+<meta property="og:url" content="http://hexgio.github.io/2022/07/19/01test/01test_04day/index.html">
+<meta property="og:site_name" content="闹的博客">
+<meta property="og:description" content="一.温故知新    变量    1.变量的含义    变量就是用来存储数据    2.变量的定义    数据类型	变量名	;    基本数据类型        整型		有符号&#x2F;无符号	short int long        实型		有符号		float double        字符型	有符号&#x2F;无符号	char    sizeof是一个运算符,不是函数        si">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-19T08:32:04.947Z">
+<meta property="article:modified_time" content="2022-07-18T15:47:34.000Z">
+<meta property="article:author" content="夜闹">
+<meta property="article:tag" content="onetest">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hexgio.github.io/2022/07/19/01test/01test_04day/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>test4 | 闹的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">闹的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://hexgio.github.io/2022/07/19/01test/01test_04day/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="夜闹">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闹的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          test4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-19 16:32:04" itemprop="dateCreated datePublished" datetime="2022-07-19T16:32:04+08:00">2022-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-18 23:47:34" itemprop="dateModified" datetime="2022-07-18T23:47:34+08:00">2022-07-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一.温故知新<br>    变量<br>    1.变量的含义<br>    变量就是用来存储数据<br>    2.变量的定义<br>    数据类型	变量名	;<br>    基本数据类型<br>        整型		有符号&#x2F;无符号	short int long<br>        实型		有符号		float double<br>        字符型	有符号&#x2F;无符号	char<br>    sizeof是一个运算符,不是函数<br>        sizeof(数据类型&#x2F;变量名),以字节为单位<br>    &#x2F;usr&#x2F;include&#x2F;limits.h<br>    变量名</p>
+<pre><code>3.变量的初始化
+数据类型	变量名	=	数值	;
+int		a		=	100	;
+float	f		=	3.14;
+
+4.变量的使用规则
+-----------------------------
+scanf
+scanf(&quot;&quot;, );
+-----------------------------
+运算符
+算术运算符	+ - * / %(取余 取模)
+关系运算符	&gt; &lt; == &gt;= &lt;= !=
+逻辑运算符	&amp;&amp; || !
+a b c
+a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a
+a * a + b * b == c * c || a * a + c * c == b * b ||
+b * b + c * c == a * a
+a == b || a == c || b == c
+a == b &amp;&amp; a == c
+赋值运算符	= += -= *= /= ...
+</code></pre>
+<p>作业<br>1.把今天讲过的内容完整的复习一遍<br>2.使用条件运算符和分支语句各解决一遍求闰年问题<br>3.输入三个值判断这三个值是否构成三角形<br>(是否是直角 等腰 等边 普通 不能)	<br>4.输入三个整数x,y,z,请把这三个数由从小到大输出<br>5.输入相应的字符打印相应的语句(默认不区分大小写)<br>输入a,打印	钟薛高18块钱<br>输入b,打印	梦龙8块钱<br>输入c,打印	老冰棒1块钱<br>输入d,打印	雪莲0.5块钱</p>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>录入成绩<br>0 ~ 59	打印	不及格<br>60 ~ 69 打印 及格<br>70 ~ 79 打印 中<br>80 ~ 89 打印 良<br>90 ~ 100 打印 优秀</p>
+<p>&#x2F;*<br>赋值运算符<br>    &#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D; &lt;&lt;&#x3D; &gt;&gt;&#x3D; &amp;&#x3D; |&#x3D;<br>    int a;<br>    a &#x3D; 9527;<br>先把赋值运算符右边的项进行计算,再赋值给赋值运算符左边的项<br>        左边的项也叫做(左值)<br>具有存储能力的都可以做左值(变量\指针\数组成员…)<br>常量(整数\字符\字符串…)不能做左值</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 100;</p>
+<pre><code>printf(&quot;a = %d\n&quot;, a);
+
+a += 2;// =&gt; 等价于 a = a + 2
+
+printf(&quot;a = %d\n&quot;, a);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>赋值运算符<br>    &#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D; &lt;&lt;&#x3D; &gt;&gt;&#x3D; &amp;&#x3D; |&#x3D;<br>    int a;<br>    a &#x3D; 9527;<br>先把赋值运算符右边的项进行计算,再赋值给赋值运算符左边的项<br>        左边的项也叫做(左值)<br>具有存储能力的都可以做左值(变量\指针\数组成员…)<br>常量(整数\字符\字符串…)不能做左值</p>
+<p>设x为int型变量,则执行以下语句后<br>x &#x3D; 10;<br>x +&#x3D; x -&#x3D; x - x;<br>x &#x3D; x + (x -&#x3D; x - x)<br>x &#x3D; x + (x &#x3D; x - (x - x))<br>x的值为？20</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 100;</p>
+<pre><code>printf(&quot;a = %d\n&quot;, a);
+
+a *= 2 + 3;
+/*
+    a = a * (2 + 3);
+*/
+
+printf(&quot;a = %d\n&quot;, a);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>条件运算符(? :)<br>    也是C语言中唯一的一个三目运算符<br>    part.1 ? part.2 : part.3;<br>    如果part.1为真,则会执行part.2的内容,略过part.3<br>    如果part.1为假,则会执行part.3的内容,略过part.2<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0, b &#x3D; 0;<br>    int max &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
+
+max = a &gt; b ? a : b;
+
+printf(&quot;max = %d\n&quot;, max);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>条件运算符(? :)<br>    也是C语言中唯一的一个三目运算符<br>    part.1 ? part.2 : part.3;<br>    如果part.1为真,则会执行part.2的内容,略过part.3<br>    如果part.1为假,则会执行part.3的内容,略过part.2<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0, b &#x3D; 0;<br>    int max &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
+
+max = a&gt;b?printf(&quot;a = %d\n&quot;, a):printf(&quot;b = %d\n&quot;, b);
+</code></pre>
+<p>&#x2F;*<br>如果a &gt; b为真, max &#x3D; printf(“a &#x3D; %d\n”, a);<br>如果a &gt; b为假, max &#x3D; printf(“b &#x3D; %d\n”, b);<br>注意:max获取的并不是变量的值,而是printf函数的返回值</p>
+<p>max &#x3D; a &gt; b ? a : b;<br>如果a &gt; b为真, max &#x3D; a;<br>如果a &gt; b为假, max &#x3D; b;<br>*&#x2F;<br>    printf(“max &#x3D; %d\n”, max);</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>条件运算符(? :)<br>    也是C语言中唯一的一个三目运算符<br>    part.1 ? part.2 : part.3;<br>    如果part.1为真,则会执行part.2的内容,略过part.3<br>    如果part.1为假,则会执行part.3的内容,略过part.2<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0, b &#x3D; 0, c &#x3D; 0;<br>    int max &#x3D; 0, max1 &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d-%d-%d&quot;, &amp;a, &amp;b, &amp;c);
+//max = a &gt; b ? a : b;
+//使用条件运算符求三个变量中的最大值
+
+max = (a &gt; b) ? (a&gt;c?a:c) : (b&gt;c?b:c);
+</code></pre>
+<p>&#x2F;*<br>    max1 &#x3D; a &gt; b ? a : b;<br>    max &#x3D; max1 &gt; c ? max1 : c;</p>
+<pre><code>max = a &gt; b ? a : b;
+max = max &gt; c ? max : c;
+</code></pre>
+<p>*&#x2F;</p>
+<pre><code>printf(&quot;max = %d\n&quot;, max);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>条件运算符(? :)<br>    也是C语言中唯一的一个三目运算符<br>    part.1 ? part.2 : part.3;<br>    如果part.1为真,则会执行part.2的内容,略过part.3<br>    如果part.1为假,则会执行part.3的内容,略过part.2<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int year &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;year);
+</code></pre>
+<p>&#x2F;&#x2F;通过条件运算符判断year是闰年还是平年<br>&#x2F;*<br>    能被4整除但是不能被100整除或者能被400整除<br>    就是闰年<br>    2022 2020 2000 1900(平年)<br>*&#x2F;</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>强制类型转换运算符<br>    (数据类型)<br>    可以把目标的数据类型临时的转换成你想转换的数据类型<br>注意 : 强制类型转换运算符并不会修改本身的数据类型<br>注意 : 尤其是以后转换指针时使用比较多</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    float f &#x3D; 3.14;</p>
+<pre><code>printf(&quot;f = %d\n&quot;, (int)f);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>自增自减运算符<br>    ++ –<br>无论是自增还是自减,所改变的数量级都是1<br>注意 :<br>    如果自增的运算自己为独立的一条语句,<br>        那么a++和++a没有任何区别,都是自增1</p>
+<pre><code>如果自增的运算和别的语句一起来使用,那么就有区别了
+    a++ : 先使用a的值做操作,再自增
+    ++a : 先自增,再使用a的值做操作
+</code></pre>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0;</p>
+<pre><code>printf(&quot;a++ = %d\n&quot;, a++);
+printf(&quot;做完a++之后a的值是%d\n&quot;, a);
+
+a = 0;
+
+printf(&quot;++a = %d\n&quot;, ++a);
+printf(&quot;做完++a之后a的值是%d\n&quot;, a);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>自增自减运算符<br>    ++ –<br>无论是自增还是自减,所改变的数量级都是1<br>注意 :<br>    如果自增的运算自己为独立的一条语句,<br>        那么a++和++a没有任何区别,都是自增1</p>
+<pre><code>如果自增的运算和别的语句一起来使用,那么就有区别了
+    a++ : 先使用a的值做操作,再自增
+    ++a : 先自增,再使用a的值做操作
+</code></pre>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0, b &#x3D; 0;</p>
+<pre><code>//a++ &amp;&amp; b++ ? printf(&quot;Hello\n&quot;) : printf(&quot;World\n&quot;);
+//a++ &amp;&amp; ++b ? printf(&quot;Hello\n&quot;) : printf(&quot;World\n&quot;);
+//++a &amp;&amp; ++b ? printf(&quot;Hello\n&quot;) : printf(&quot;World\n&quot;);
+++a || b++ ? printf(&quot;Hello\n&quot;) : printf(&quot;World\n&quot;);
+
+printf(&quot;a = %d b = %d\n&quot;, a, b);
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;i);
+
+if(i &lt; 100)
+&#123;
+
+    printf(&quot;Hello World!\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;i);
+
+//if(i % 2 == 0)//!(i % 2)
+if(!(i % 2))
+&#123;
+    printf(&quot;%d这个值是偶数!\n&quot;, i);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>3.if…else的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>else<br>{<br>    语句3<br>}<br>语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;语句4-&gt;结束<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int i &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;i);
+
+//if(i % 2 == 0)//!(i % 2)
+if(!(i % 2))
+&#123;
+    printf(&quot;%d这个值是偶数!\n&quot;, i);
+&#125;
+else
+&#123;
+    printf(&quot;%d这个值是奇数!\n&quot;, i);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>3.if…else的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>else<br>{<br>    语句3<br>}<br>语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;语句4-&gt;结束<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int year &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;year);
+
+if((year%4==0 &amp;&amp; year%100!=0) || (year%400==0))
+    //2022 2020 2000 1900
+&#123;
+    printf(&quot;%d这一年是闰年!\n&quot;, year);
+&#125;
+else
+&#123;
+    printf(&quot;%d这一年是平年!\n&quot;, year);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>3.if…else的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>else<br>{<br>    语句3<br>}<br>语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;语句4-&gt;结束<br>4.多分支结构<br>语句1<br>if(条件1)<br>{<br>    语句2<br>}<br>else if(条件2)<br>{<br>    语句3<br>}<br>else if(条件3)<br>{<br>    语句4<br>}<br>else<br>{	<br>    语句5<br>}<br>语句6<br>语句1-&gt;条件1的判断(真)-&gt;语句2-&gt;语句6-&gt;结束<br>        |<br>        (假)-&gt;条件2的判断(真)-&gt;语句3-&gt;语句6-&gt;结束<br>                |<br>                (假)-&gt;条件3的判断(真)-&gt;语句4-&gt;语句6-&gt;结束<br>                        |<br>                        (假)-&gt;语句5-&gt;语句6-&gt;结束<br>注意<br>1.if else都是C语言的关键字<br>2.if关键字之后必须要加小括号,小括号内部必须要写条件,不能空着</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int a &#x3D; 0, b &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d-%d&quot;, &amp;a, &amp;b);
+
+if(a &gt; b)
+&#123;
+    printf(&quot;Hello World!\n&quot;);
+&#125;
+else if(a &lt; b)
+&#123;
+    printf(&quot;Hello Beijing!\n&quot;);
+&#125;
+else
+&#123;
+    printf(&quot;Hello Changping!\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>分支语句-&gt;if<br>1.if是C语言的关键字<br>2.if的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>语句3<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句3-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;结束<br>3.if…else的结构<br>语句1<br>if(条件)<br>{<br>    语句2<br>}<br>else<br>{<br>    语句3<br>}<br>语句4<br>语句1-&gt;条件的判断(真)-&gt;语句2-&gt;语句4-&gt;结束<br>            |<br>            (假)-&gt;语句3-&gt;语句4-&gt;结束<br>4.多分支结构<br>语句1<br>if(条件1)<br>{<br>    语句2<br>}<br>else if(条件2)<br>{<br>    语句3<br>}<br>else if(条件3)<br>{<br>    语句4<br>}<br>else<br>{	<br>    语句5<br>}<br>语句6<br>语句1-&gt;条件1的判断(真)-&gt;语句2-&gt;语句6-&gt;结束<br>        |<br>        (假)-&gt;条件2的判断(真)-&gt;语句3-&gt;语句6-&gt;结束<br>                |<br>                (假)-&gt;条件3的判断(真)-&gt;语句4-&gt;语句6-&gt;结束<br>                        |<br>                        (假)-&gt;语句5-&gt;语句6-&gt;结束<br>注意<br>1.if else都是C语言的关键字<br>2.if关键字之后必须要加小括号,小括号内部必须要写条件,不能空者<br>3.在if(条件)之后可以加分号<br>    if(0);<br>    {<br>        printf(“Hello World!\n”);<br>    }<br>    等价于<br>    if(0)<br>    {<br>        ;<br>    }<br>    {<br>        printf(“Hello World!\n”);<br>    }<br>4.在if(条件)之下可以不写大括号<br>(以后写代码即使if的语句只有一条,也要加上大括号)<br>    if(0)<br>        printf(“Hello\n”);<br>        printf(“World!\n”);<br>    等价于<br>    if(0)<br>    {<br>        printf(“Hello\n”);<br>    }<br>    printf(“World!\n”);</p>
+<p>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    if(0)<br>        printf(“Hello\n”);<br>        printf(“World!\n”);</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+<p>&#x2F;*<br>练习<br>键入一个整数x,<br>如果小于3则执行x+3操作,<br>如果大于等于3则执行3<em>x+9<br>如果大于9则执行9</em>x-10<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    int x &#x3D; 0;</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;x);
+if(x &lt; 3)
+&#123;
+    printf(&quot;x + 3 = %d\n&quot;, x + 3);
+&#125;
+else if(x &gt; 9)
+&#123;
+    printf(&quot;9 * x - 10 = %d\n&quot;, 9 * x - 10);
+&#125;
+else
+&#123;
+    printf(&quot;3 * x + 9 = %d\n&quot;, 3 * x + 9);
+&#125;
+</code></pre>
+<p>&#x2F;*<br>    if(x &lt; 3)<br>    {<br>        printf(“x + 3 &#x3D; %d\n”, x + 3);<br>    }<br>    else if(x &gt;&#x3D; 3 &amp;&amp; x &lt;&#x3D; 9)<br>    {<br>        printf(“3 * x + 9 &#x3D; %d\n”, 3 * x + 9);<br>    }<br>    else<br>    {<br>        printf(“9 * x - 10 &#x3D; %d\n”, 9 * x - 10);<br>    }<br>*&#x2F;<br>    return 0;<br>}</p>
+<p>&#x2F;*<br>输入三个值判断这三个值是否构成三角形<br>(是否是直角 等腰 等边 普通 不能)<br>*&#x2F;<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/onetest/" rel="tag"># onetest</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/19/01test/01test_06day/" rel="prev" title="test6">
+      <i class="fa fa-chevron-left"></i> test6
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/19/02linux/02linux_linux_note/" rel="next" title="02linux">
+      02linux <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">夜闹</p>
+  <div class="site-description" itemprop="description">记录是成熟与成长的过程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夜闹</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
