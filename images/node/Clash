@@ -5,95 +5,115 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb, server: azhj001.xibai6.top, port: 20803, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
-  - {name: US, server: azhj001.xibai6.top, port: 20801, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
-  - {name: AU_01 | 9.15Mb, server: awskr.azzhuangaping.tw, port: 80, type: vmess, uuid: 4c4e065f-363b-3c9b-8a4d-312f6b9840d3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-path: /adobe, ws-headers: {Host: awskr.azzhuangaping.tw}, udp: true}
-  - {name: US 2, server: 20.239.74.87, port: 80, type: trojan, password: 8a4b7ed7-3e24-48d5-93d2-2c58a2e8305d, skip-cert-verify: true, udp: true}
-  - {name: US 3, server: azhj001.xibai6.top, port: 20804, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
-  - {name: US 4, server: azhj001.xibai6.top, port: 20800, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
-  - {name: US_298, server: 152.67.160.174, port: 443, type: trojan, password: 54080134-2cba-4535-8599-95650bd9aa54, skip-cert-verify: true, udp: true}
-  - {name: US_1524 |20.35Mb, server: jgwhdlb2.gaox.ml, port: 443, type: trojan, password: 54080134-2cba-4535-8599-95650bd9aa54, sni: jgwhdlb2.gaox.ml, skip-cert-verify: true, udp: true}
-  - {name: US 5, server: 155.248.241.52, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 155.248.241.52}, udp: true}
-  - {name: _857, server: 106.12.168.13, port: 13156, type: vmess, uuid: 9bf4cba4-9e9e-4da4-8e65-f7c487c539df, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 106.12.168.13}, udp: true}
+  - {name: Relay_-🇸🇬SG_585, server: 54.251.73.154, port: 41261, type: trojan, password: 07bd5bd8-2a2f-4c56-bd10-7616f92a79d0, skip-cert-verify: true, udp: true}
   - {name: "|35.03Mb", server: 129.154.37.199, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 129.154.37.199}, udp: true}
-  - {name: US 6, server: 20.247.111.40, port: 42310, type: trojan, password: 8a4b7ed7-3e24-48d5-93d2-2c58a2e8305d, skip-cert-verify: true, udp: true}
-  - {name: "| 3.05Mb", server: 141.147.181.219, port: 443, type: vmess, uuid: 0b873cff-11ab-4716-c41a-04f886135091, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /roewesu, ws-headers: {Host: 141.147.181.219}, udp: true}
-  - {name: SG, server: lzj.wangmd.ga, port: 443, type: vmess, uuid: 154144a5-596d-4a7e-ce58-d724e99c035d, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /154144a5-596d-4a7e-ce58-d724e99c035d, ws-headers: {Host: lzj.wangmd.ga}, udp: true}
-  - {name: US 7, server: 207.148.6.143, port: 51341, type: vmess, uuid: 7374810e-bae9-4ae2-eb62-0be130fdcb66, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-  - {name: US 8, server: 139.144.231.213, port: 10043, type: trojan, password: 8a4b7ed7-3e24-48d5-93d2-2c58a2e8305d, skip-cert-verify: true, udp: true}
+  - {name: _868 |34.58Mb, server: 168.138.44.176, port: 443, type: trojan, password: 8d2d5953-d649-4034-94f2-72f2df2623da, skip-cert-verify: true, udp: true}
+  - {name: US, server: 155.248.241.52, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 155.248.241.52}, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb, server: azhj001.xibai6.top, port: 20802, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
+  - {name: Relay_ | 3.22Mb, server: 21.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 21.72img.xyz}, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb, server: azhj001.xibai6.top, port: 20804, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb, server: azhj001.xibai6.top, port: 20800, type: trojan, password: ca2345ba-46e7-3991-b1b7-45d18954caf1, sni: azhj001.xibai6.top, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |21.94Mb, server: jp1.mayaa.cf, port: 443, type: vmess, uuid: 595b4629-116d-4fe1-dcab-d2a6b112b81a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /hfhqqweqwxxx, ws-headers: {Host: jp1.mayaa.cf}, udp: true}
+  - {name: Relay_🇫🇷FR-🇫🇷FR_1063, server: content-provider26.cdn-delivery.akamaicd.com, port: 443, type: trojan, password: origin, sni: content-provider26.cdn-delivery.akamaicd.com, skip-cert-verify: true, udp: true}
+  - {name: FR_1061, server: content-provider12.cdn-delivery.akamaicd.com, port: 443, type: trojan, password: origin, sni: content-provider12.cdn-delivery.akamaicd.com, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |21.25Mb, server: 4.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 4.72img.xyz}, udp: true}
+  - {name: Relay_-🇺🇸US_842 | 2.86Mb, server: 34.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 34.72img.xyz}, udp: true}
+  - {name: Relay_ |24.05Mb, server: 20.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 20.72img.xyz}, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb, server: 38.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 38.72img.xyz}, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_899, server: jm.jshsxxxy.top, port: 443, type: vmess, uuid: ac29ef42-7100-4fdd-a5ee-5bb07b146e61, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /MokonaModokiMkv2Rentry, ws-headers: {Host: jm.jshsxxxy.top}, udp: true}
+  - {name: Relay_-🇺🇸US_846 | 9.98Mb, server: 14.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 14.72img.xyz}, udp: true}
   - {name: "|34.34Mb", server: 144.24.150.126, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 144.24.150.126}, udp: true}
-  - {name: NL_1398 | 0.01Mb, server: 213.183.51.171, port: 9026, type: ss, cipher: aes-256-cfb, password: QWDDvVE9npNurQfA, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb, server: 31.72img.xyz, port: 443, type: trojan, password: 81d93f62-15a2-4994-adb9-0b5d906aac7e, sni: 31.72img.xyz, skip-cert-verify: true, udp: true}
+  - {name: Relay_🇺🇸US-🇺🇸US_922, server: 32.72img.xyz, port: 443, type: trojan, password: 81d93f62-15a2-4994-adb9-0b5d906aac7e, sni: 32.72img.xyz, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |31.61Mb, server: 22.72img.xyz, port: 443, type: vmess, uuid: 81d93f62-15a2-4994-adb9-0b5d906aac7e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: 22.72img.xyz}, udp: true}
+  - {name: "| 3.05Mb", server: 141.147.181.219, port: 443, type: vmess, uuid: 0b873cff-11ab-4716-c41a-04f886135091, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /roewesu, ws-headers: {Host: 141.147.181.219}, udp: true}
+  - {name: US_924, server: 72.14.187.235, port: 10044, type: trojan, password: 8a4b7ed7-3e24-48d5-93d2-2c58a2e8305d, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -112,24 +132,29 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -140,71 +165,86 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -220,24 +260,29 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - Relay_🇺🇸US-🇺🇸US_2241 |19.35Mb
-      - US
-      - AU_01 | 9.15Mb
-      - US 2
-      - US 3
-      - US 4
-      - US_298
-      - US_1524 |20.35Mb
-      - US 5
-      - _857
+      - Relay_-🇸🇬SG_585
       - "|35.03Mb"
-      - US 6
-      - "| 3.05Mb"
-      - SG
-      - US 7
-      - US 8
+      - _868 |34.58Mb
+      - US
+      - Relay_🇺🇸US-🇺🇸US_2235 |12.30Mb
+      - Relay_ | 3.22Mb
+      - Relay_🇺🇸US-🇺🇸US_2237 | 1.66Mb
+      - Relay_🇺🇸US-🇺🇸US_2223 |21.30Mb
+      - Relay_ |21.94Mb
+      - Relay_🇫🇷FR-🇫🇷FR_1063
+      - FR_1061
+      - Relay_ |21.25Mb
+      - Relay_-🇺🇸US_842 | 2.86Mb
+      - Relay_ |24.05Mb
+      - Relay_🇺🇸US-🇺🇸US_2204 |18.55Mb
+      - Relay_🇺🇸US-🇺🇸US_899
+      - Relay_-🇺🇸US_846 | 9.98Mb
       - "|34.34Mb"
-      - NL_1398 | 0.01Mb
+      - Relay_🇺🇸US-🇺🇸US_2224 | 8.64Mb
+      - Relay_🇺🇸US-🇺🇸US_922
+      - Relay_ |31.61Mb
+      - "| 3.05Mb"
+      - US_924
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
