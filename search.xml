@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>如何在手机上搭建hexo博客</title>
+      <link href="/2022/12/17/hexo/%E5%A6%82%E4%BD%95%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2022/12/17/hexo/%E5%A6%82%E4%BD%95%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装-termxu"><a href="#安装-termxu" class="headerlink" title="安装 termxu"></a>安装 termxu</h2><h2 id="配置-termux"><a href="#配置-termux" class="headerlink" title="配置 termux"></a>配置 termux</h2><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><h2 id="安装hexo框架"><a href="#安装hexo框架" class="headerlink" title="安装hexo框架"></a>安装hexo框架</h2><h2 id="创建博客目录"><a href="#创建博客目录" class="headerlink" title="创建博客目录"></a>创建博客目录</h2><h2 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h2><h2 id="配置站点目录文件"><a href="#配置站点目录文件" class="headerlink" title="配置站点目录文件"></a>配置站点目录文件</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何利用一个github账号搭建多个hexo博客</title>
+      <link href="/2022/12/17/hexo/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%B8%80%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%E6%90%AD%E5%BB%BA%E5%A4%9A%E4%B8%AAhexo%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2022/12/17/hexo/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%B8%80%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%E6%90%AD%E5%BB%BA%E5%A4%9A%E4%B8%AAhexo%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="回顾搭建第一个博客的过程"><a href="#回顾搭建第一个博客的过程" class="headerlink" title="回顾搭建第一个博客的过程"></a>回顾搭建第一个博客的过程</h1><p>首先利用一个github账号搭建一个hexo博客大家应该都会了，不然也不会看这篇客，当然，想回顾一下如何利用一个github账号搭建一个hexo的话，可以通过此链接：<a href="https://ynblog.cf/2022/10/27/hexo/%E6%90%AD%E5%BB%BAhexo/">https://ynblog.cf/2022/10/27/hexo/搭建hexo/</a> 查看相关文章，内部附详细教程视频。</p><h1 id="如何利用一个github账号搭建多个hexo博客的大概过程"><a href="#如何利用一个github账号搭建多个hexo博客的大概过程" class="headerlink" title="如何利用一个github账号搭建多个hexo博客的大概过程"></a>如何利用一个github账号搭建多个hexo博客的大概过程</h1><p>接下来进入正题，先大概说一下如何实现，很简单，在一个github账号搭建过hexo博客基础上想继续通过该账号搭建新的博客，可能通过创建组织来实现，组织名自定义，创建完组织后，在组织当中创建仓库，有过搭建hexo博客的朋友都知道，一般仓库名称格式是 用户名.github.io 这样的格式，那么添加组织后，在组织中创建的准备用来搭建博客的仓库的名称的格式也应该是 仓库名.github.io ，剩下的就简单了，按照搭建第一个博客的过程来就可以了，过程基本一样。</p><h1 id="接下来进入教程环节"><a href="#接下来进入教程环节" class="headerlink" title="接下来进入教程环节"></a>接下来进入教程环节</h1><h2 id="创建组织"><a href="#创建组织" class="headerlink" title="创建组织"></a>创建组织</h2><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><h2 id="创建博客目录"><a href="#创建博客目录" class="headerlink" title="创建博客目录"></a>创建博客目录</h2><h2 id="配置站点目录文件"><a href="#配置站点目录文件" class="headerlink" title="配置站点目录文件"></a>配置站点目录文件</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何通过配置ssh文件在同一台电脑生成多个密钥登录多个github账户</title>
       <link href="/2022/12/16/hexo/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AEssh%E6%96%87%E4%BB%B6%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/"/>
       <url>/2022/12/16/hexo/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AEssh%E6%96%87%E4%BB%B6%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</url>
