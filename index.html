@@ -730,6 +730,153 @@ Cygwin\usr\sbin
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ynblog.cf/2023/02/16/hexo/%E6%90%AD%E5%BB%BAhexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YN">
+      <meta itemprop="description" content="记录是成熟与成长的过程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ynblog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/16/hexo/%E6%90%AD%E5%BB%BAhexo/" class="post-title-link" itemprop="url">搭建hexo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 07:45:08" itemprop="dateCreated datePublished" datetime="2023-02-16T07:45:08+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-30 23:36:05" itemprop="dateModified" datetime="2022-10-30T23:36:05+08:00">2022-10-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="/images/%E6%90%AD%E5%BB%BAhexo.pdf">点击访问 搭建hexo.pdf</a></p>
+
+<iframe src="//player.bilibili.com/player.html?aid=817033871&bvid=BV1tG4y1h7UE&cid=875426844&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+<h1 id="hexo博客搭建教程"><a href="#hexo博客搭建教程" class="headerlink" title="hexo博客搭建教程"></a>hexo博客搭建教程</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><pre><code>需要安装：nodejs、git-bash
+因官网下载太慢，这里使用nodejs的国内网站和git-bash的镜像网站进行下载
+nodejs链接：http://nodejs.cn/download/
+    nodejs下载地址：https://cdn.npmmirror.com/binaries/node/v16.17.0/node-v16.17.0-x64.msi
+git-bash链接：https://registry.npmmirror.com/binary.html?path=git-for-windows/
+    git-bash下载地址：https://cdn.npmmirror.com/binaries/git-for-windows/v2.38.0.windows.1/Git-2.38.0-64-bit.exe
+
+接下来安装nodejs和git-bash
+</code></pre>
+
+
+<h3 id="nodejs安装教程："><a href="#nodejs安装教程：" class="headerlink" title="nodejs安装教程："></a>nodejs安装教程：</h3><p><img src="/images/nodejs/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B78.PNG"></p>
+<h3 id="git-bash安装教程："><a href="#git-bash安装教程：" class="headerlink" title="git-bash安装教程："></a>git-bash安装教程：</h3><p><img src="/images/git-bash/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B717.PNG"></p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><pre><code>接下来开始搭建hexo：
+    在git-bash中执行命令
+        npm install hexo-cli -g	#安装博客框架
+            执行 hexo init		#生成博客的站点目录
+            执行命令 hexo s 可以启动本地博客，博客显示的内容
+                在站点目录的 source/_posts/ 路径下
+
+        修改配置文件
+            准备一个qq邮箱之外的邮箱，邮箱的实用性越高越好，因此我建议的邮箱是微软的Outlook邮箱，官网是 outlook.live.com 可以在注册一个Outlook邮箱,注册完Outlook邮箱之后就可以到 github.com官网 注册了，搭建hexo的前提是在github.com官网 注册并搭建一个用于部署hexo的仓库。
+            在github注册并新建一个仓库，仓库格式为 仓库名.github.io，然后将该仓库生成的	ssh链接复制下来，打开刚刚创建的站点目录下的 _config.yml
+                vim _config.yml
+                在该文件的最下面，有一段代码：
+
+                    # Deployment
+                    ## Docs: https://hexo.io/docs/one-command-deployment
+                    deploy:
+                      type: &#39; &#39;
+                将代码更改为：
+                    # Deployment
+                    ## Docs: https://hexo.io/docs/one-command-deployment
+                    deploy:
+                      type: &#39;git&#39;	#部署博客类型
+                     repo: git@github.com:zzfxdyn/zzfxdyn.github.io.git	#仓库生成的链接
+                     branch: main		#仓库默认分支
+                同时将该文件中url：http://example.com改为 https://仓库名
+                
+        npm install hexo-deployer-git --save	#安装博客部署插件
+
+        生成ssh密钥
+            ssh-keygen -t rsa -C &quot;注册github时的邮箱&quot;
+            连续多次回车，生成ssh密钥在，按照提示的路径进入该路径下复制 id_rsa.pub 的内容
+            默认路径为 ~/.ssh,在git-bash中通过命令 cd ~/.ssh 进入该路径
+            cat id_rsa.pub		#显示id_rsa.pub的内容，然后鼠标选中复制
+            复制的内容为生成的密钥的公钥，回到浏览器，打开github的设置，点击SSH and GPG Keys，
+            添加新的密钥，自定义一个名字，粘贴密钥并确定
+
+        
+        回到git-bash，配置好站点目录文件后执行命令
+        git config --global user.email &quot;you@example.com&quot;
+        git config --global user.name &quot;Your Name&quot;
+        执行 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 测试博客部署插件是否安装成功
+</code></pre>
+<h2 id="vim编辑器的使用方法"><a href="#vim编辑器的使用方法" class="headerlink" title="vim编辑器的使用方法"></a>vim编辑器的使用方法</h2><pre><code>vim之所以被称之为强大的编辑器是因为本身支持很多的模式
+命令模式 命令行模式(底行模式) 编辑模式(插入模式) 可视 可视块 可视行
+注意 : 不要使用vim打开目录文件
+注意 : 用vim编写完成的文件内容要用正常的保存退出方式,不要直接关闭终端
+    否则会生成交换文件(交换文件是隐藏文件)
+                vim hello.c
+                    |
+按iIoOaA				V				按:
+编辑模式&lt;----------命令模式----------&gt;命令行模式
+        ---------&gt;		&lt;---------	
+            按esc		按esc或者删掉:
+
+命令行模式的操作
+    :w		保存
+    :q		退出
+    :wq		保存并且退出
+</code></pre>
+<h2 id="如何修改hosts文件"><a href="#如何修改hosts文件" class="headerlink" title="如何修改hosts文件"></a>如何修改hosts文件</h2><h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><pre><code>也是网上推荐较多的，比较常用的方法
+</code></pre>
+<p><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B717.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B718.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B719.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B720.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B721.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B722.PNG"></p>
+<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><pre><code>通过网站获得github网站的ip，我用的是 ipaddress.com 这个网站，点击进入网站后会显示一个403页面，再点击 Go to Homepage 即可真正进入网站。
+</code></pre>
+<p><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B717.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B718.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B719.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B720.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B721.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B722.PNG"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://ynblog.cf/2023/02/16/stm32%E5%85%A5%E9%97%A8/stm32_day01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -987,153 +1134,6 @@ LED实验步骤：
 
   
 </code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ynblog.cf/2023/02/16/hexo/%E6%90%AD%E5%BB%BAhexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YN">
-      <meta itemprop="description" content="记录是成熟与成长的过程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ynblog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/16/hexo/%E6%90%AD%E5%BB%BAhexo/" class="post-title-link" itemprop="url">搭建hexo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-02-16 07:45:08" itemprop="dateCreated datePublished" datetime="2023-02-16T07:45:08+08:00">2023-02-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-30 23:36:05" itemprop="dateModified" datetime="2022-10-30T23:36:05+08:00">2022-10-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="/images/%E6%90%AD%E5%BB%BAhexo.pdf">点击访问 搭建hexo.pdf</a></p>
-
-<iframe src="//player.bilibili.com/player.html?aid=817033871&bvid=BV1tG4y1h7UE&cid=875426844&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
-<h1 id="hexo博客搭建教程"><a href="#hexo博客搭建教程" class="headerlink" title="hexo博客搭建教程"></a>hexo博客搭建教程</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><pre><code>需要安装：nodejs、git-bash
-因官网下载太慢，这里使用nodejs的国内网站和git-bash的镜像网站进行下载
-nodejs链接：http://nodejs.cn/download/
-    nodejs下载地址：https://cdn.npmmirror.com/binaries/node/v16.17.0/node-v16.17.0-x64.msi
-git-bash链接：https://registry.npmmirror.com/binary.html?path=git-for-windows/
-    git-bash下载地址：https://cdn.npmmirror.com/binaries/git-for-windows/v2.38.0.windows.1/Git-2.38.0-64-bit.exe
-
-接下来安装nodejs和git-bash
-</code></pre>
-
-
-<h3 id="nodejs安装教程："><a href="#nodejs安装教程：" class="headerlink" title="nodejs安装教程："></a>nodejs安装教程：</h3><p><img src="/images/nodejs/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/nodejs/%E6%8D%95%E8%8E%B78.PNG"></p>
-<h3 id="git-bash安装教程："><a href="#git-bash安装教程：" class="headerlink" title="git-bash安装教程："></a>git-bash安装教程：</h3><p><img src="/images/git-bash/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/git-bash/%E6%8D%95%E8%8E%B717.PNG"></p>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><pre><code>接下来开始搭建hexo：
-    在git-bash中执行命令
-        npm install hexo-cli -g	#安装博客框架
-            执行 hexo init		#生成博客的站点目录
-            执行命令 hexo s 可以启动本地博客，博客显示的内容
-                在站点目录的 source/_posts/ 路径下
-
-        修改配置文件
-            准备一个qq邮箱之外的邮箱，邮箱的实用性越高越好，因此我建议的邮箱是微软的Outlook邮箱，官网是 outlook.live.com 可以在注册一个Outlook邮箱,注册完Outlook邮箱之后就可以到 github.com官网 注册了，搭建hexo的前提是在github.com官网 注册并搭建一个用于部署hexo的仓库。
-            在github注册并新建一个仓库，仓库格式为 仓库名.github.io，然后将该仓库生成的	ssh链接复制下来，打开刚刚创建的站点目录下的 _config.yml
-                vim _config.yml
-                在该文件的最下面，有一段代码：
-
-                    # Deployment
-                    ## Docs: https://hexo.io/docs/one-command-deployment
-                    deploy:
-                      type: &#39; &#39;
-                将代码更改为：
-                    # Deployment
-                    ## Docs: https://hexo.io/docs/one-command-deployment
-                    deploy:
-                      type: &#39;git&#39;	#部署博客类型
-                     repo: git@github.com:zzfxdyn/zzfxdyn.github.io.git	#仓库生成的链接
-                     branch: main		#仓库默认分支
-                同时将该文件中url：http://example.com改为 https://仓库名
-                
-        npm install hexo-deployer-git --save	#安装博客部署插件
-
-        生成ssh密钥
-            ssh-keygen -t rsa -C &quot;注册github时的邮箱&quot;
-            连续多次回车，生成ssh密钥在，按照提示的路径进入该路径下复制 id_rsa.pub 的内容
-            默认路径为 ~/.ssh,在git-bash中通过命令 cd ~/.ssh 进入该路径
-            cat id_rsa.pub		#显示id_rsa.pub的内容，然后鼠标选中复制
-            复制的内容为生成的密钥的公钥，回到浏览器，打开github的设置，点击SSH and GPG Keys，
-            添加新的密钥，自定义一个名字，粘贴密钥并确定
-
-        
-        回到git-bash，配置好站点目录文件后执行命令
-        git config --global user.email &quot;you@example.com&quot;
-        git config --global user.name &quot;Your Name&quot;
-        执行 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 测试博客部署插件是否安装成功
-</code></pre>
-<h2 id="vim编辑器的使用方法"><a href="#vim编辑器的使用方法" class="headerlink" title="vim编辑器的使用方法"></a>vim编辑器的使用方法</h2><pre><code>vim之所以被称之为强大的编辑器是因为本身支持很多的模式
-命令模式 命令行模式(底行模式) 编辑模式(插入模式) 可视 可视块 可视行
-注意 : 不要使用vim打开目录文件
-注意 : 用vim编写完成的文件内容要用正常的保存退出方式,不要直接关闭终端
-    否则会生成交换文件(交换文件是隐藏文件)
-                vim hello.c
-                    |
-按iIoOaA				V				按:
-编辑模式&lt;----------命令模式----------&gt;命令行模式
-        ---------&gt;		&lt;---------	
-            按esc		按esc或者删掉:
-
-命令行模式的操作
-    :w		保存
-    :q		退出
-    :wq		保存并且退出
-</code></pre>
-<h2 id="如何修改hosts文件"><a href="#如何修改hosts文件" class="headerlink" title="如何修改hosts文件"></a>如何修改hosts文件</h2><h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><pre><code>也是网上推荐较多的，比较常用的方法
-</code></pre>
-<p><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B717.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B718.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B719.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B720.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B721.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B722.PNG"></p>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><pre><code>通过网站获得github网站的ip，我用的是 ipaddress.com 这个网站，点击进入网站后会显示一个403页面，再点击 Go to Homepage 即可真正进入网站。
-</code></pre>
-<p><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B71.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B72.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B73.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B74.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B75.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B76.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B77.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B78.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B79.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B710.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B711.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B712.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B713.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B714.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B715.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B716.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B717.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B718.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B719.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B720.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B721.PNG"><br><img src="/images/%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6%E7%9A%84%E6%95%99%E7%A8%8B/%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%B3%95/%E6%8D%95%E8%8E%B722.PNG"></p>
 
       
     </div>
