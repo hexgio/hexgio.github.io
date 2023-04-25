@@ -39,8 +39,8 @@
 <meta property="og:image" content="https://ynblog.cf/images/cygwin/cygwin_2.png">
 <meta property="og:image" content="https://ynblog.cf/images/cygwin/cygwin_3.png">
 <meta property="og:image" content="https://ynblog.cf/images/STM32F107ZGT6.png">
-<meta property="article:published_time" content="2023-04-25T10:32:24.431Z">
-<meta property="article:modified_time" content="2023-04-25T10:32:24.419Z">
+<meta property="article:published_time" content="2023-04-25T10:39:35.912Z">
+<meta property="article:modified_time" content="2023-04-25T10:39:35.896Z">
 <meta property="article:author" content="YN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ynblog.cf/images/test.png">
@@ -392,7 +392,7 @@ wget --wait=20 --limit-rate=20K --no-parent -r -p -U Mozilla http://www.w3school
 <h1 id="sdf"><a href="#sdf" class="headerlink" title="sdf"></a>sdf</h1><p>Welcome to the SDF.ORG and Remote Learning Lab!</p>
 <p>Your class instructor or SDF.ORG has set up the following:<br>SDF Username:<br>SDF Password:  </p>
 <p>Please login to your account via the following methods:</p>
-<p> Linux or UNIX use:  ssh <a href="mailto:&#x70;&#97;&#x73;&#115;&#x77;&#x64;&#x40;&#x74;&#x74;&#x79;&#46;&#x73;&#100;&#102;&#46;&#x6f;&#114;&#103;">&#x70;&#97;&#x73;&#115;&#x77;&#x64;&#x40;&#x74;&#x74;&#x79;&#46;&#x73;&#100;&#102;&#46;&#x6f;&#114;&#103;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
+<p> Linux or UNIX use:  ssh <a href="mailto:&#x70;&#97;&#115;&#x73;&#119;&#x64;&#x40;&#116;&#116;&#x79;&#46;&#x73;&#x64;&#102;&#x2e;&#111;&#x72;&#103;">&#x70;&#97;&#115;&#x73;&#119;&#x64;&#x40;&#116;&#116;&#x79;&#46;&#x73;&#x64;&#102;&#x2e;&#111;&#x72;&#103;</a><br> MacOS: use Terminal.App and follow the method above<br> Windows: use putty.exe and enter the Host Name “tty.sdf.org”<br> Mobile: Find an SSH app for your device</p>
 <p>Need help NOW? Check out irc.sdf.org #helpdesk<br>               Join our QQ Chat Group: 513706123<br>and the SDF Member Contributed Tutorials at <a target="_blank" rel="noopener" href="https://sdf.org/?tutorials">https://sdf.org/?tutorials</a></p>
 <p>We also host social Mastodon, PixelFed, Peertube, Matrix and GIT instances:<br>You can join at<br><a target="_blank" rel="noopener" href="https://mastodon.sdf.org/">https://mastodon.sdf.org</a></p>
 <p><a target="_blank" rel="noopener" href="https://pixelfed.sdf.org/">https://pixelfed.sdf.org</a></p>
@@ -823,12 +823,12 @@ hosts文件：
 
 <p>2.效果演示展示：</p>
 
-    <div id="aplayer-ehsMwAwd" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-CdpLNkgM" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="3068013756" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>		//添加歌单
 
 
-    <div id="aplayer-BSGnfVwU" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-QGWYkCmS" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="157288" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>		//添加单曲
 
@@ -1282,8 +1282,12 @@ Y：WLCSP/WLCSP64
 接着将按顺序命名的文件批量到第一个文件复制并重命名后的文件中
     cp day01.txt allday.txt &amp;&amp; cat day02.txt day03.txt day04.txt day05.txt day06.txt day07.txt day08.txt day09.txt day10.txt day11.txt day12.txt day13.txt day14.txt day15.txt &gt;&gt; day01.txt
 </code></pre>
-<h1 id="查找文件关键词并替换"><a href="#查找文件关键词并替换" class="headerlink" title="查找文件关键词并替换"></a>查找文件关键词并替换</h1><pre><code> sed -i &quot;s/fda/adf/g&quot; `grep -rl &quot;fda&quot; ./1.c`
-     fda是要查找的字符串，将查找到的字符串fda替换为adf
+<h1 id="查找文件关键词并替换"><a href="#查找文件关键词并替换" class="headerlink" title="查找文件关键词并替换"></a>查找文件关键词并替换</h1><pre><code>方法一：
+    sed -i &quot;s/fda/adf/g&quot; `grep -rl &quot;fda&quot; ./1.c`
+        fda是要查找的字符串，将查找到的字符串fda替换为adf
+方法二：
+    grep -rl -w &quot;adf&quot; ./1.c | xargs sed -i &#39;s/adf/fda/g&#39;
+        adf是要查找的字符串，将查找到的字符串adf替换为fda        
 </code></pre>
 
       </div>
