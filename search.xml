@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>应用列表</title>
+      <link href="/2023/05/01/Application/Application/"/>
+      <url>/2023/05/01/Application/Application/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="%E7%A7%8B%E5%88%80%E9%B1%BC%E7%BB%BF%E8%89%B2%E7%B2%BE%E7%AE%80%E7%89%88.exe">秋刀鱼绿色精简版</a><br><a href="%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7.zip">微软 激活工具</a><br><a href="%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1.exe">微软 虚拟光驱</a><br><a href="Hash.exe">文件校验工具 Hash</a><br><a href="Captura-Setup.exe">录屏工具 Captura</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 应用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何在Windows环境实现make命令</title>
       <link href="/2023/02/16/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0make%E5%91%BD%E4%BB%A4/"/>
       <url>/2023/02/16/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0make%E5%91%BD%E4%BB%A4/</url>
